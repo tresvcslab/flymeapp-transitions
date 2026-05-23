@@ -1,0 +1,6 @@
+{
+  "name": "WebView Transitions",
+  "description": "Clean, full-screen transition animations for embedding in a Flutter app via WebView.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

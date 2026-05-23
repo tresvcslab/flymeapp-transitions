@@ -112,15 +112,16 @@ export default function App() {
 
   // Dispatch callback back to Flutter when animation transitions successfully complete
   const handleAnimationComplete = () => {
-    console.log(`[WebView Animation] Dispatching complete event for scene: ${scene}`);
+    const message = JSON.stringify({ event: 'animation_complete', scene: scene });
+    
+    // Canal principal de Flutter WebView
+    if ((window as any).FlutterBridge) {
+      (window as any).FlutterBridge.postMessage(message);
+    }
+    
+    // Fallback por si acaso
     if (window.parent) {
-      window.parent.postMessage(
-        {
-          event: 'animation_complete',
-          scene: scene,
-        },
-        '*'
-      );
+      window.parent.postMessage({ event: 'animation_complete', scene: scene }, '*');
     }
   };
 

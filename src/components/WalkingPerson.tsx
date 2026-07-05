@@ -61,7 +61,6 @@ export const WalkingPerson: React.FC<WalkingPersonProps> = ({
       <motion.path 
          d="M48 33 L35 44 L22 55"
          stroke="white" 
-         strokeOpacity={dimOpacity} 
          strokeWidth="5.5" 
          strokeLinecap="round" 
          strokeLinejoin="round"
@@ -80,7 +79,6 @@ export const WalkingPerson: React.FC<WalkingPersonProps> = ({
         }}
         transition={{ duration: cycleDuration, delay: animDelay, repeat: Infinity, ease: easePattern }}
         stroke="white" 
-        strokeOpacity={dimOpacity} 
         strokeWidth="6.5" 
         strokeLinecap="round" 
         strokeLinejoin="round" 

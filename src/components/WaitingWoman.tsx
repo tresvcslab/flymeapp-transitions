@@ -43,7 +43,6 @@ export const WaitingWoman: React.FC<WaitingWomanProps> = ({
         <path 
           d="M48 33 L42 45 L40 54" 
           stroke="white" 
-          strokeOpacity="0.45"
           strokeWidth="5" 
           strokeLinecap="round" 
           strokeLinejoin="round" 
@@ -54,7 +53,6 @@ export const WaitingWoman: React.FC<WaitingWomanProps> = ({
         <path 
           d="M45 52 L45 81" 
           stroke="white" 
-          strokeOpacity="0.5"
           strokeWidth="6" 
           strokeLinecap="round" 
         />
@@ -182,7 +180,6 @@ export const WaitingWoman: React.FC<WaitingWomanProps> = ({
           <motion.path 
             d="M44 52 L38 65 L32 60" 
             stroke="white" 
-            strokeOpacity="0.5"
             strokeWidth="6" 
             strokeLinecap="round" 
             strokeLinejoin="round"
@@ -246,7 +243,6 @@ export const WaitingWoman: React.FC<WaitingWomanProps> = ({
           <motion.path 
             d="M47 33 L35 28 L28 18" 
             stroke="white" 
-            strokeOpacity="0.6"
             strokeWidth="5" 
             strokeLinecap="round" 
             strokeLinejoin="round" 
@@ -302,7 +298,6 @@ export const WaitingWoman: React.FC<WaitingWomanProps> = ({
           ease: easePattern
         }}
         stroke="white" 
-        strokeOpacity="0.45"
         strokeWidth="5.5" 
         strokeLinecap="round" 
         strokeLinejoin="round" 
@@ -325,7 +320,6 @@ export const WaitingWoman: React.FC<WaitingWomanProps> = ({
           ease: easePattern
         }}
         stroke="white" 
-        strokeOpacity="0.45"
         strokeWidth="6.5" 
         strokeLinecap="round" 
         strokeLinejoin="round" 

@@ -43,7 +43,6 @@ export const RunningPerson: React.FC<RunningPersonProps> = ({
         <path 
           d="M48 33 L45 45 L48 54" 
           stroke="white" 
-          strokeOpacity="0.45"
           strokeWidth="5" 
           strokeLinecap="round" 
           strokeLinejoin="round" 
@@ -54,7 +53,6 @@ export const RunningPerson: React.FC<RunningPersonProps> = ({
         <path 
           d="M55 51 L55 81" 
           stroke="white" 
-          strokeOpacity="0.5"
           strokeWidth="6" 
           strokeLinecap="round" 
         />
@@ -165,7 +163,6 @@ export const RunningPerson: React.FC<RunningPersonProps> = ({
           ease: easePattern
         }}
         stroke="white" 
-        strokeOpacity="0.45"
         strokeWidth="6" 
         strokeLinecap="round" 
         strokeLinejoin="round" 
@@ -188,7 +185,6 @@ export const RunningPerson: React.FC<RunningPersonProps> = ({
           ease: easePattern
         }}
         stroke="white" 
-        strokeOpacity="0.45"
         strokeWidth="7" 
         strokeLinecap="round" 
         strokeLinejoin="round" 

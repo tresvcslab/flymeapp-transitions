@@ -185,12 +185,12 @@ export default function App() {
     >
       {renderScene()}
 
-      {/* Permanent visual preview controls at the bottom of the viewport */}
+      {/* Permanent visual preview controls at the top of the viewport */}
       {!isEmbed && (
-        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-[250] flex gap-3 pointer-events-auto select-none">
+        <div className="absolute top-2 sm:top-6 left-1/2 -translate-x-1/2 z-[250] flex gap-1.5 sm:gap-3 pointer-events-auto select-none w-max max-w-[95vw]">
           <button
             onClick={() => setScene('flights')}
-            className={`px-3.5 py-1.5 text-xs font-bold tracking-widest uppercase rounded-full shadow-lg backdrop-blur-md border transition-all duration-300 transform active:scale-95 ${
+            className={`px-2 py-1 sm:px-3.5 sm:py-1.5 text-[9px] sm:text-xs font-bold tracking-wider sm:tracking-widest uppercase rounded-full shadow-lg backdrop-blur-md border transition-all duration-300 transform active:scale-95 ${
               scene === 'flights'
                 ? 'bg-white text-violet-900 border-white/80 scale-105'
                 : 'bg-black/50 text-white/90 border-white/10 hover:bg-black/70 hover:border-white/30'
@@ -200,7 +200,7 @@ export default function App() {
           </button>
           <button
             onClick={() => setScene('hotels')}
-            className={`px-3.5 py-1.5 text-xs font-bold tracking-widest uppercase rounded-full shadow-lg backdrop-blur-md border transition-all duration-300 transform active:scale-95 ${
+            className={`px-2 py-1 sm:px-3.5 sm:py-1.5 text-[9px] sm:text-xs font-bold tracking-wider sm:tracking-widest uppercase rounded-full shadow-lg backdrop-blur-md border transition-all duration-300 transform active:scale-95 ${
               scene === 'hotels'
                 ? 'bg-white text-emerald-900 border-white/80 scale-105'
                 : 'bg-black/50 text-white/90 border-white/10 hover:bg-black/70 hover:border-white/30'
@@ -210,7 +210,7 @@ export default function App() {
           </button>
           <button
             onClick={() => setScene('cars')}
-            className={`px-3.5 py-1.5 text-xs font-bold tracking-widest uppercase rounded-full shadow-lg backdrop-blur-md border transition-all duration-300 transform active:scale-95 ${
+            className={`px-2 py-1 sm:px-3.5 sm:py-1.5 text-[9px] sm:text-xs font-bold tracking-wider sm:tracking-widest uppercase rounded-full shadow-lg backdrop-blur-md border transition-all duration-300 transform active:scale-95 ${
               scene === 'cars'
                 ? 'bg-white text-amber-950 border-white/80 scale-105'
                 : 'bg-black/50 text-white/90 border-white/10 hover:bg-black/70 hover:border-white/30'
@@ -220,7 +220,7 @@ export default function App() {
           </button>
           <button
             onClick={() => setScene('trips')}
-            className={`px-3.5 py-1.5 text-xs font-bold tracking-widest uppercase rounded-full shadow-lg backdrop-blur-md border transition-all duration-300 transform active:scale-95 ${
+            className={`px-2 py-1 sm:px-3.5 sm:py-1.5 text-[9px] sm:text-xs font-bold tracking-wider sm:tracking-widest uppercase rounded-full shadow-lg backdrop-blur-md border transition-all duration-300 transform active:scale-95 ${
               scene === 'trips'
                 ? 'bg-white text-sky-900 border-white/80 scale-105'
                 : 'bg-black/50 text-white/90 border-white/10 hover:bg-black/70 hover:border-white/30'
@@ -230,7 +230,7 @@ export default function App() {
           </button>
           <button
             onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-            className="px-3.5 py-1.5 text-base rounded-full shadow-lg backdrop-blur-md border border-white/10 bg-black/50 hover:bg-black/70 hover:border-white/30 text-white transition-all duration-300 transform active:scale-95 flex items-center justify-center"
+            className="px-2 py-1 sm:px-3.5 sm:py-1.5 text-xs sm:text-base rounded-full shadow-lg backdrop-blur-md border border-white/10 bg-black/50 hover:bg-black/70 hover:border-white/30 text-white transition-all duration-300 transform active:scale-95 flex items-center justify-center"
             title="Cambiar Tema"
           >
             {theme === 'dark' ? '🌙' : '☀️'}

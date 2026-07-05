@@ -31,9 +31,7 @@ export const AviationTransitions: React.FC<AviationTransitionsProps> = ({
         }`}
       >
         {/* Logo in the same position as App.tsx */}
-        <div className="pt-12 pb-4 flex justify-center">
-          <Logo size="md" />
-        </div>
+        <Logo className="absolute top-16 left-1/2 -translate-x-1/2 z-30" size="md" />
 
         <div className="flex-1 relative flex items-center justify-center">
           {/* Celestial background stardust */}
@@ -431,9 +429,7 @@ export const AviationTransitions: React.FC<AviationTransitionsProps> = ({
           isDarkMode ? 'bg-[#070b13]' : 'bg-[#8B5CF6]'
         }`}
       >
-        <div className="pt-12 pb-4 flex justify-center">
-          <Logo size="md" />
-        </div>
+        <Logo className="absolute top-16 left-1/2 -translate-x-1/2 z-30" size="md" />
 
         <div className="flex-1 relative flex items-center justify-center">
           {/* Floating Clouds */}
@@ -1106,9 +1102,7 @@ export const AviationTransitions: React.FC<AviationTransitionsProps> = ({
           isDarkMode ? 'bg-[#070b13]' : 'bg-[#8B5CF6]'
         }`}
       >
-        <div className="pt-12 pb-4 flex justify-center">
-          <Logo size="md" />
-        </div>
+        <Logo className="absolute top-16 left-1/2 -translate-x-1/2 z-30" size="md" />
 
         <div className="flex-1 relative flex items-center justify-center">
           {/* Running Wind Trails */}

@@ -1036,7 +1036,7 @@ export const AviationTransitions: React.FC<AviationTransitionsProps> = ({
           </motion.div>
 
           {/* Waving family */}
-          <div className="absolute flex items-end justify-center gap-5 z-20 pointer-events-none" style={{ top: '60%' }}>
+          <div className="absolute flex items-end justify-center gap-10 z-20 pointer-events-none" style={{ top: '60%' }}>
             <motion.div
               initial={{ opacity: 0, scale: 0.5, y: 30 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -1065,6 +1065,7 @@ export const AviationTransitions: React.FC<AviationTransitionsProps> = ({
               initial={{ opacity: 0, scale: 0.5, y: 30 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
+              className="ml-6"
             >
               <WaitingWoman size={100} state="greeting" />
             </motion.div>

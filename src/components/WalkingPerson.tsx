@@ -28,6 +28,7 @@ export const WalkingPerson: React.FC<WalkingPersonProps> = ({
   const accentColor = "#e11d48";
   const skinColor = "#fda4af";
   const eyeColor = isDarkMode ? "#070b13" : "#8B5CF6";
+  const balloonColor = isDarkMode ? accentColor : "white";
   
   const suitcaseColor = isDarkMode ? (isFemale ? "#f472b6" : "#60a5fa") : "white";
 
@@ -192,8 +193,8 @@ export const WalkingPerson: React.FC<WalkingPersonProps> = ({
           transition={{ duration: 2.2, delay: animDelay, repeat: Infinity, ease: "easeInOut" }}
         >
           <path d="M60 48 Q 72 30 78 12" stroke="white" strokeDasharray="2 3" strokeWidth="1.2" fill="none" />
-          <circle cx="78" cy="7" r="7" fill={accentColor} />
-          <path d="M78 14 L 75 18 L 81 18 Z" fill={accentColor} />
+          <circle cx="78" cy="7" r="7" fill={balloonColor} />
+          <path d="M78 14 L 75 18 L 81 18 Z" fill={balloonColor} />
         </motion.g>
       )}
     </svg>

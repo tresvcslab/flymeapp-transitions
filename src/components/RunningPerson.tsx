@@ -39,13 +39,26 @@ export const RunningPerson: React.FC<RunningPersonProps> = ({
           transition={{ duration: 1.5, repeat: Infinity, ease: easePattern }}
         />
 
-        {/* Back Arm (Slightly relaxed, or in pocket/hip area) */}
-        <path 
-          d="M48 33 L45 45 L48 54" 
+        {/* Back Arm - Joyful greeting wave on the other side */}
+        <motion.path 
+          d="M48 33 L58 35 L62 25" 
           stroke="white" 
           strokeWidth="5" 
           strokeLinecap="round" 
           strokeLinejoin="round" 
+          animate={{
+            d: [
+              "M48 33 L59 31 L64 20", // Wave high
+              "M48 33 L58 33 L61 24", // Wave low
+              "M48 33 L59 31 L64 20"  // Wave high
+            ]
+          }}
+          transition={{
+            duration: 0.8,
+            delay: 0.1, // Slightly out of phase for a natural look
+            repeat: Infinity,
+            ease: easePattern
+          }}
         />
 
         {/* Both Legs standing, one slightly forward towards her */}

@@ -1,0 +1,2 @@
+Place your logo.png or logo.svg file in this directory to use it in your app.
+For example: /public/logo.png

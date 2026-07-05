@@ -1,4 +1,4 @@
-export type SceneType = 'splash' | 'flights' | 'hotels' | 'cars';
+export type SceneType = 'splash' | 'flights' | 'hotels' | 'cars' | 'trips';
 export type ThemeType = 'light' | 'dark';
 
 export interface AnimationProps {

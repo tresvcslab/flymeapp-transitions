@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { SceneType, ThemeType } from './types';
 import SplashScreen from './components/SplashScreen';
 import { AviationTransitions } from './components/AviationTransitions';
+import TripsScreen from './components/TripsScreen';
 
 export default function App() {
   // Read initial configuration from URL query parameters
@@ -45,6 +46,10 @@ export default function App() {
       timer = setTimeout(() => {
         handleAnimationComplete();
       }, 5000); // 5 seconds
+    } else if (scene === 'trips') {
+      timer = setTimeout(() => {
+        handleAnimationComplete();
+      }, 4000); // 4 seconds
     }
 
     return () => {
@@ -83,7 +88,7 @@ export default function App() {
 
         if (msgBuffer && typeof msgBuffer === 'object') {
           if (msgBuffer.scene) {
-            const validScenes: SceneType[] = ['splash', 'flights', 'hotels', 'cars'];
+            const validScenes: SceneType[] = ['splash', 'flights', 'hotels', 'cars', 'trips'];
             if (validScenes.includes(msgBuffer.scene)) {
               setScene(msgBuffer.scene);
             }
@@ -167,6 +172,8 @@ export default function App() {
             isDarkMode={isDark}
           />
         );
+      case 'trips':
+        return <TripsScreen theme={theme} />;
       default:
         return <SplashScreen onAnimationComplete={handleAnimationComplete} />;
     }
@@ -176,49 +183,6 @@ export default function App() {
     <main
       className={`relative w-screen h-screen flex items-center justify-center transition-colors duration-500 overflow-hidden select-none ${getBackgroundClass()}`}
     >
-      {/* Visual Debug helper visible only when not embedded, for manual previewing & scene switching */}
-      {!isEmbed && (
-        <div className="absolute top-4 left-4 z-50 flex gap-2 opacity-10 hover:opacity-100 transition-opacity duration-300 pointer-events-auto bg-slate-900/60 p-2 rounded-lg backdrop-blur text-[10px] font-mono text-white select-none">
-          <button
-            onClick={() => setScene('splash')}
-            className={`px-2 py-1 rounded ${scene === 'splash' ? 'bg-indigo-500' : 'bg-slate-800'}`}
-          >
-            Splash
-          </button>
-          <button
-            onClick={() => setScene('flights')}
-            className={`px-2 py-1 rounded ${scene === 'flights' ? 'bg-indigo-500' : 'bg-slate-800'}`}
-          >
-            Flights
-          </button>
-          <button
-            onClick={() => setScene('hotels')}
-            className={`px-2 py-1 rounded ${scene === 'hotels' ? 'bg-indigo-500' : 'bg-slate-800'}`}
-          >
-            Hotels
-          </button>
-          <button
-            onClick={() => setScene('cars')}
-            className={`px-2 py-1 rounded ${scene === 'cars' ? 'bg-indigo-500' : 'bg-slate-800'}`}
-          >
-            Cars
-          </button>
-          <div className="h-4 w-px bg-slate-700 my-auto mx-1" />
-          <button
-            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-            className="px-2 py-1 rounded bg-slate-800"
-          >
-            {theme.toUpperCase()}
-          </button>
-          <button
-            onClick={() => setIsTransparent(!isTransparent)}
-            className={`px-2 py-1 rounded ${isTransparent ? 'bg-teal-500' : 'bg-slate-800'}`}
-          >
-            {isTransparent ? 'TRANS' : 'SOLID'}
-          </button>
-        </div>
-      )}
-
       {renderScene()}
 
       {/* Permanent visual preview controls at the bottom of the viewport */}
@@ -253,6 +217,16 @@ export default function App() {
             }`}
           >
             Cars
+          </button>
+          <button
+            onClick={() => setScene('trips')}
+            className={`px-3.5 py-1.5 text-xs font-bold tracking-widest uppercase rounded-full shadow-lg backdrop-blur-md border transition-all duration-300 transform active:scale-95 ${
+              scene === 'trips'
+                ? 'bg-white text-sky-900 border-white/80 scale-105'
+                : 'bg-black/50 text-white/90 border-white/10 hover:bg-black/70 hover:border-white/30'
+            }`}
+          >
+            Trips
           </button>
           <button
             onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}

@@ -23,8 +23,8 @@ export const PremiumTransitions: React.FC<PremiumTransitionsProps> = ({
   hotelAnimState,
   isDarkMode,
 }) => {
-  // Premium Light Theme uses a beautiful lilac/morado light background (#F6F4F9)
-  const premiumBg = 'bg-[#F6F4F9]';
+  // Premium Light Theme uses a beautiful pure white background (#FFFFFF)
+  const premiumBg = 'bg-[#FFFFFF]';
   const premiumText = 'text-[#3A1B58]';
   const premiumTextMuted = 'text-[#3A1B58]/60';
   const premiumStroke = '#3A1B58';
@@ -1071,7 +1071,7 @@ export const PremiumTransitions: React.FC<PremiumTransitionsProps> = ({
 
           {/* Street Road Block */}
           <div 
-            className="absolute left-0 right-0 bottom-0 z-0 bg-neutral-100" 
+            className="absolute left-0 right-0 bottom-0 z-0 bg-[#FFFFFF]" 
             style={{ top: 'calc(50% + 70px)' }} 
           >
             {/* Dashed center line */}
@@ -1291,7 +1291,7 @@ export const PremiumTransitions: React.FC<PremiumTransitionsProps> = ({
         <div className="absolute inset-0 flex items-center justify-center z-10">
             
             {/* Airport Moving Walkway */}
-            <div className="absolute top-1/2 translate-y-[52px] w-[120vw] h-[12px] bg-neutral-100 border-y border-neutral-300 flex overflow-hidden shadow-sm z-10">
+            <div className="absolute top-1/2 translate-y-[52px] w-[120vw] h-[12px] bg-[#FFFFFF] border-y border-neutral-300 flex overflow-hidden shadow-sm z-10">
                {/* Moving belt pattern */}
                <motion.div
                   animate={{ x: [0, -40] }}
@@ -1315,9 +1315,9 @@ export const PremiumTransitions: React.FC<PremiumTransitionsProps> = ({
                <div className="flex items-end gap-[600px]">
                   {/* Tree */}
                   <div className="w-16 h-28 mb-0 flex flex-col items-center mt-auto">
-                     <div className="w-16 h-22 rounded-full bg-neutral-100 border border-neutral-300 mb-[-12px]" />
-                     <div className="w-16 h-22 rounded-full bg-neutral-100 border border-neutral-300 absolute mt-4 -ml-6" />
-                     <div className="w-16 h-22 rounded-full bg-neutral-100 border border-neutral-300 absolute mt-6 ml-8" />
+                     <div className="w-16 h-22 rounded-full bg-[#FFFFFF] border border-neutral-300 mb-[-12px]" />
+                     <div className="w-16 h-22 rounded-full bg-[#FFFFFF] border border-neutral-300 absolute mt-4 -ml-6" />
+                     <div className="w-16 h-22 rounded-full bg-[#FFFFFF] border border-neutral-300 absolute mt-6 ml-8" />
                      <div className="w-2 h-16 bg-neutral-300 mt-4" />
                   </div>
                </div>

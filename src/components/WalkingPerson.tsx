@@ -5,6 +5,7 @@ export interface WalkingPersonProps {
   size?: number;
   type?: 'man' | 'woman' | 'boy' | 'girl';
   isDarkMode?: boolean;
+  isPremium?: boolean;
   animDelay?: number;
   className?: string;
   color?: string;
@@ -14,6 +15,7 @@ export const WalkingPerson: React.FC<WalkingPersonProps> = ({
   size = 80,
   type = 'man',
   isDarkMode = false,
+  isPremium = false,
   animDelay = 0,
   className = '',
   color = 'white'
@@ -30,9 +32,11 @@ export const WalkingPerson: React.FC<WalkingPersonProps> = ({
   const accentColor = "#e11d48";
   const skinColor = "#fda4af";
   const eyeColor = isDarkMode ? "#070b13" : "#8B5CF6";
-  const balloonColor = isDarkMode ? accentColor : "white";
+  const balloonColor = (isDarkMode || isPremium) ? accentColor : "white";
   
-  const suitcaseColor = isDarkMode ? (isFemale ? "#f472b6" : "#60a5fa") : "white";
+  const useDarkModeSuitcase = isDarkMode || isPremium;
+  const suitcaseColor = useDarkModeSuitcase ? (isFemale ? "#f472b6" : "#60a5fa") : "white";
+  const suitcaseDetailColor = isPremium ? "#3A1B58" : "white";
 
   const suitcaseAnim = {
     y: [0, 1.5, 0, 1.5, 0]
@@ -52,12 +56,12 @@ export const WalkingPerson: React.FC<WalkingPersonProps> = ({
         animate={suitcaseAnim}
         transition={{ duration: cycleDuration, delay: animDelay, repeat: Infinity, ease: easePattern }}
       >
-        <path d="M22 55 L16 63 L16 68" stroke="white" strokeOpacity={dimOpacity} strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M16 63 L10 63 L10 68" stroke="white" strokeOpacity={dimOpacity} strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-        <rect x="2" y="68" width="22" height="26" rx="4" fill={suitcaseColor} fillOpacity={isDarkMode ? 0.2 : 0.2} stroke={suitcaseColor} strokeOpacity={isDarkMode ? 0.6 : dimOpacity} strokeWidth="3.5" />
-        <circle cx="6" cy="95" r="2.5" fill="white" opacity={dimOpacity} />
-        <circle cx="20" cy="95" r="2.5" fill="white" opacity={dimOpacity} />
-        <line x1="13" y1="74" x2="13" y2="88" stroke="white" strokeOpacity={dimOpacity} strokeWidth="2" strokeLinecap="round" />
+        <path d="M22 55 L16 63 L16 68" stroke={suitcaseDetailColor} strokeOpacity={dimOpacity} strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M16 63 L10 63 L10 68" stroke={suitcaseDetailColor} strokeOpacity={dimOpacity} strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+        <rect x="2" y="68" width="22" height="26" rx="4" fill={suitcaseColor} fillOpacity={useDarkModeSuitcase ? 0.2 : 0.2} stroke={suitcaseColor} strokeOpacity={useDarkModeSuitcase ? 0.6 : dimOpacity} strokeWidth="3.5" />
+        <circle cx="6" cy="95" r="2.5" fill={suitcaseDetailColor} opacity={dimOpacity} />
+        <circle cx="20" cy="95" r="2.5" fill={suitcaseDetailColor} opacity={dimOpacity} />
+        <line x1="13" y1="74" x2="13" y2="88" stroke={suitcaseDetailColor} strokeOpacity={dimOpacity} strokeWidth="2" strokeLinecap="round" />
       </motion.g>
 
       {/* Back Arm Pulling Suitcase */}

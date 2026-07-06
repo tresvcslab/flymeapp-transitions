@@ -1325,10 +1325,10 @@ export const PremiumTransitions: React.FC<PremiumTransitionsProps> = ({
 
             {/* The Walking Family (Now standing on the moving walkway) */}
             <div className="absolute flex items-end gap-0 bottom-1/2 translate-y-[52px] scale-[1.75] origin-bottom translate-x-2 z-20">
-               <WalkingPerson type="man" isDarkMode={false} animDelay={0} size={70} className="z-40 drop-shadow-md" color="#F3B490" />
-               <WalkingPerson type="woman" isDarkMode={false} animDelay={0.2} size={70} className="-ml-3 z-30 drop-shadow-md" color="#F3B490" />
-               <WalkingPerson type="boy" isDarkMode={false} animDelay={0.4} size={70} className="-ml-5 z-20 drop-shadow-md" color="#F3B490" />
-               <WalkingPerson type="girl" isDarkMode={false} animDelay={0.6} size={70} className="-ml-5 z-10 drop-shadow-md" color="#F3B490" />
+               <WalkingPerson type="man" isDarkMode={false} isPremium={true} animDelay={0} size={70} className="z-40 drop-shadow-md" color="#F3B490" />
+               <WalkingPerson type="woman" isDarkMode={false} isPremium={true} animDelay={0.2} size={70} className="-ml-3 z-30 drop-shadow-md" color="#F3B490" />
+               <WalkingPerson type="boy" isDarkMode={false} isPremium={true} animDelay={0.4} size={70} className="-ml-5 z-20 drop-shadow-md" color="#F3B490" />
+               <WalkingPerson type="girl" isDarkMode={false} isPremium={true} animDelay={0.6} size={70} className="-ml-5 z-10 drop-shadow-md" color="#F3B490" />
             </div>
             
             {/* Logo in the sky */}

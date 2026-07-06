@@ -4,6 +4,7 @@ import SplashScreen from './components/SplashScreen';
 import { AviationTransitions } from './components/AviationTransitions';
 import { PremiumTransitions } from './components/PremiumTransitions';
 import TripsScreen from './components/TripsScreen';
+import { Crown, Sun, Moon } from 'lucide-react';
 
 export default function App() {
   // Read initial configuration from URL query parameters
@@ -19,11 +20,14 @@ export default function App() {
   const { sceneParam, themeParam, isTransparentParam, isEmbedParam } = getQueryParams();
 
   const [scene, setScene] = useState<SceneType>(sceneParam);
-  const [theme, setTheme] = useState<ThemeType>(themeParam);
+  const [appMode, setAppMode] = useState<'light' | 'dark' | 'premium'>(
+    themeParam === 'light' ? 'light' : 'dark'
+  );
+  const theme = appMode === 'light' ? 'light' : 'dark';
+  const isPremium = appMode === 'premium';
   const [isTransparent, setIsTransparent] = useState<boolean>(isTransparentParam);
   const [isEmbed, setIsEmbed] = useState<boolean>(isEmbedParam);
   const [hotelAnimState, setHotelAnimState] = useState<'waiting' | 'greeting' | 'running'>('waiting');
-  const [isPremium, setIsPremium] = useState<boolean>(false);
 
   // Trigger countdown timers for non-splash scenes to complete automatically
   useEffect(() => {
@@ -65,7 +69,7 @@ export default function App() {
     const handleUrlChange = () => {
       const { sceneParam, themeParam, isTransparentParam, isEmbedParam } = getQueryParams();
       setScene(sceneParam);
-      setTheme(themeParam);
+      setAppMode(themeParam === 'light' ? 'light' : 'dark');
       setIsTransparent(isTransparentParam);
       setIsEmbed(isEmbedParam);
     };
@@ -98,7 +102,7 @@ export default function App() {
           if (msgBuffer.theme) {
             const validThemes: ThemeType[] = ['light', 'dark'];
             if (validThemes.includes(msgBuffer.theme)) {
-              setTheme(msgBuffer.theme);
+              setAppMode(msgBuffer.theme);
             }
           }
           if (msgBuffer.transparent !== undefined) {
@@ -285,23 +289,27 @@ export default function App() {
             Trips
           </button>
           <button
-            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-            className="px-2 py-1 sm:px-3.5 sm:py-1.5 text-xs sm:text-base rounded-full shadow-lg backdrop-blur-md border border-white/10 bg-black/50 hover:bg-black/70 hover:border-white/30 text-white transition-all duration-300 transform active:scale-95 flex items-center justify-center"
-            title="Cambiar Tema"
-          >
-            {theme === 'dark' ? '🌙' : '☀️'}
-          </button>
-          <button
-            className={`px-2 py-1 sm:px-3.5 sm:py-1.5 text-[9px] sm:text-xs font-bold tracking-wider sm:tracking-widest uppercase rounded-full shadow-lg backdrop-blur-md border transition-all duration-300 transform active:scale-95 flex items-center justify-center gap-1 ${
-              isPremium 
-                ? 'bg-gradient-to-r from-amber-500 to-yellow-400 text-slate-950 border-amber-300 font-extrabold scale-105 shadow-[0_0_15px_rgba(245,158,11,0.5)] animate-pulse'
-                : 'border-amber-500/30 bg-amber-500/20 text-amber-200 hover:bg-amber-500/40 hover:border-amber-500/60'
+            onClick={() => {
+              setAppMode(prev => {
+                if (prev === 'light') return 'dark';
+                if (prev === 'dark') return 'premium';
+                return 'light';
+              });
+            }}
+            className={`w-10 h-10 sm:w-11 sm:h-11 rounded-full shadow-lg backdrop-blur-md border transition-all duration-300 transform active:scale-90 flex items-center justify-center ${
+              appMode === 'premium'
+                ? 'bg-gradient-to-r from-amber-500 to-yellow-400 text-slate-950 border-amber-300 shadow-[0_0_15px_rgba(245,158,11,0.5)] scale-105 animate-pulse'
+                : appMode === 'dark'
+                ? 'bg-black/50 text-white/90 border-white/10 hover:bg-black/70 hover:border-white/30'
+                : 'bg-white text-slate-950 border-slate-200 hover:bg-slate-50'
             }`}
-            title="Premium Mode"
-            onClick={() => setIsPremium(!isPremium)}
+            title={`Cambiar Modo (Actual: ${
+              appMode === 'light' ? 'Claro' : appMode === 'dark' ? 'Oscuro' : 'Premium'
+            })`}
           >
-            <span>✨</span>
-            <span>Premium</span>
+            {appMode === 'light' && <Sun size={20} className="text-amber-500 transition-transform duration-300" />}
+            {appMode === 'dark' && <Moon size={20} className="text-violet-400 transition-transform duration-300" />}
+            {appMode === 'premium' && <Crown size={20} className="fill-current text-slate-950 transition-transform duration-300" />}
           </button>
         </div>
       )}

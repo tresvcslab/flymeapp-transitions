@@ -40,11 +40,10 @@ export const PremiumTransitions: React.FC<PremiumTransitionsProps> = ({
         className={`fixed inset-0 z-[100] flex flex-col overflow-hidden transition-colors duration-500 ${premiumBg}`}
       >
         {/* Logo in the same position as App.tsx */}
-        <div className="pt-12 pb-4 flex justify-center">
-          <Logo size="md" className="text-black" isPremium={true} />
-        </div>
+        <Logo className="absolute top-16 left-1/2 -translate-x-1/2 z-30 text-black" size="md" isPremium={true} />
 
         <div className="flex-1 relative flex items-center justify-center">
+
           {/* Celestial background stardust (Premium soft dark slate particles) */}
           <div className="absolute inset-0 pointer-events-none z-0">
             {[...Array(20)].map((_, i) => (
@@ -68,42 +67,6 @@ export const PremiumTransitions: React.FC<PremiumTransitionsProps> = ({
               />
             ))}
           </div>
-
-          {/* Departure Compass / Radar Motif (Bottom-Left) */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: [0, 0.35, 0.35, 0] }}
-            transition={{ duration: 4.0, times: [0, 0.15, 0.85, 1] }}
-            className={`absolute bottom-20 left-16 w-16 h-16 border rounded-full flex items-center justify-center pointer-events-none z-0 border-[#3A1B58]/20`}
-          >
-            <div className="w-2 h-2 rounded-full absolute bg-[#3A1B58]/40" />
-            <motion.div 
-              animate={{ rotate: 360 }}
-              transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-              className="w-12 h-12 border border-dashed rounded-full flex items-center justify-center border-[#3A1B58]/10"
-            >
-              <div className="w-full h-[1px] bg-[#3A1B58]/10" />
-            </motion.div>
-            <span className="absolute -bottom-4 text-[7px] font-black tracking-widest uppercase text-[#3A1B58]/40">DEP AP</span>
-          </motion.div>
-
-          {/* Destination Compass Sweep (Top-Right) */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: [0, 0.35, 0.35, 0] }}
-            transition={{ duration: 4.0, times: [0, 0.15, 0.85, 1] }}
-            className="absolute top-16 right-20 w-16 h-16 border rounded-full flex items-center justify-center pointer-events-none z-0 border-[#3A1B58]/20"
-          >
-            <div className="w-2 h-2 rounded-full absolute animate-ping bg-[#3A1B58]/40" />
-            <motion.div 
-              animate={{ rotate: -360 }}
-              transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
-              className="w-12 h-12 border border-dashed rounded-full flex items-center justify-center border-[#3A1B58]/10"
-            >
-              <div className="w-full h-[1px] bg-[#3A1B58]/10" />
-            </motion.div>
-            <span className="absolute -top-4 text-[7px] font-black tracking-widest uppercase text-[#3A1B58]/40">ARR AP</span>
-          </motion.div>
 
           {/* Aerodynamic Wind Currents & Scenic Flight Arc */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
@@ -160,7 +123,9 @@ export const PremiumTransitions: React.FC<PremiumTransitionsProps> = ({
           </div>
 
           {/* Global Miniature Travel Skylines Silhouette (The monument colors are maintained) */}
-          <div className="absolute inset-x-0 bottom-4 h-16 pointer-events-none z-0 flex items-end justify-between px-6 opacity-95">
+          <div className="absolute inset-x-0 h-16 pointer-events-none z-0 flex items-end justify-between px-6 opacity-95" style={{ bottom: 'calc(56px + 15%)' }}>
+            {/* Horizontal ground/floor line (piso) */}
+            <div className="absolute bottom-0 left-0 right-0 h-[2px] z-10 bg-[#3A1B58]/15" />
             {/* SVG Gradients & Glow Filters Definitions */}
             <svg className="absolute w-0 h-0" width="0" height="0">
               <defs>
@@ -438,11 +403,11 @@ export const PremiumTransitions: React.FC<PremiumTransitionsProps> = ({
         exit={{ opacity: 0 }}
         className={`fixed inset-0 z-[100] flex flex-col overflow-hidden transition-colors duration-500 ${premiumBg}`}
       >
-        <div className="pt-12 pb-4 flex justify-center">
-          <Logo size="md" className="text-black" isPremium={true} />
-        </div>
+        <Logo className="absolute top-16 left-1/2 -translate-x-1/2 z-30 text-black" size="md" isPremium={true} />
 
         <div className="flex-1 relative flex items-center justify-center">
+
+
           {/* Floating Clouds */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
             <motion.div
@@ -495,7 +460,7 @@ export const PremiumTransitions: React.FC<PremiumTransitionsProps> = ({
           </div>
 
           {/* Cozy Neighborhood storefront Backdrop (Premium High-Contrast Light Mode) */}
-          <div className="absolute inset-x-0 bottom-4 h-32 pointer-events-none z-0 overflow-hidden flex justify-center opacity-85">
+          <div className="absolute inset-x-0 h-32 pointer-events-none z-0 overflow-hidden flex justify-center opacity-85" style={{ bottom: 'calc(16px + 15%)' }}>
             <svg 
               viewBox="0 0 800 200" 
               className="w-full max-w-4xl h-full drop-shadow-[0_2px_8px_rgba(0,0,0,0.06)]"
@@ -1014,7 +979,7 @@ export const PremiumTransitions: React.FC<PremiumTransitionsProps> = ({
           </motion.div>
 
           {/* Waving family */}
-          <div className="absolute flex items-end justify-center gap-5 z-20 pointer-events-none" style={{ top: '60%' }}>
+          <div className="absolute flex items-end justify-center gap-4 sm:gap-10 scale-75 sm:scale-100 origin-bottom z-20 pointer-events-none" style={{ bottom: 'calc(24px + 15%)' }}>
             <motion.div
               initial={{ opacity: 0, scale: 0.5, y: 30 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -1078,11 +1043,11 @@ export const PremiumTransitions: React.FC<PremiumTransitionsProps> = ({
         exit={{ opacity: 0 }}
         className={`fixed inset-0 z-[100] flex flex-col overflow-hidden transition-colors duration-500 ${premiumBg}`}
       >
-        <div className="pt-12 pb-4 flex justify-center">
-          <Logo size="md" className="text-black" isPremium={true} />
-        </div>
+        <Logo className="absolute top-16 left-1/2 -translate-x-1/2 z-30 text-black" size="md" isPremium={true} />
 
         <div className="flex-1 relative flex items-center justify-center">
+
+
           {/* Running Wind Trails */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
             {[...Array(5)].map((_, i) => (
@@ -1303,10 +1268,11 @@ export const PremiumTransitions: React.FC<PremiumTransitionsProps> = ({
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.35 }}
-        className="fixed inset-0 z-[100] flex flex-col justify-between overflow-hidden p-6 pb-24 transition-colors duration-500 bg-white"
+        className={`fixed inset-0 z-[100] flex flex-col justify-between overflow-hidden p-6 pb-24 transition-colors duration-500 ${premiumBg}`}
       >
         {/* Scenery background */}
         <div className="absolute inset-0 pointer-events-none z-0 mt-32">
+
            {/* Clouds panning left */}
            <motion.div
              animate={{ x: [0, -1000] }}
@@ -1366,7 +1332,7 @@ export const PremiumTransitions: React.FC<PremiumTransitionsProps> = ({
             </div>
             
             {/* Logo in the sky */}
-            <div className="absolute top-12 left-1/2 -translate-x-1/2 text-black">
+            <div className="absolute top-16 left-1/2 -translate-x-1/2 text-black z-30">
                <Logo size="md" isPremium={true} />
             </div>
 

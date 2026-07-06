@@ -33,6 +33,22 @@ export default function TripsScreen({ theme }: TripsScreenProps) {
       {/* Escenario de caminata central */}
       <div className="absolute inset-0 flex items-center justify-center z-10">
         
+        {/* Sidewalk curb line */}
+        <div className={`absolute left-0 right-0 h-[2px] z-0 ${isDarkMode ? 'bg-white/20' : 'bg-white/40'}`} style={{ top: 'calc(50% + 52px)' }} />
+
+        {/* Street Road Block */}
+        <div 
+          className={`absolute left-0 right-0 bottom-0 z-0 ${isDarkMode ? 'bg-[#070b13]' : 'bg-[#8B5CF6]'}`} 
+          style={{ top: 'calc(50% + 52px)' }} 
+        >
+          {/* Pavement details/Dashed center line */}
+          <div className="absolute top-6 left-0 right-0 h-[3px] flex gap-8 justify-around px-8 opacity-25">
+            {[...Array(16)].map((_, i) => (
+              <div key={`line-${i}`} className="w-12 h-full bg-white rounded-full" />
+            ))}
+          </div>
+        </div>
+
         {/* Cinta mecánica de aeropuerto infinita */}
         <div className="absolute top-1/2 translate-y-[52px] w-[120vw] h-[12px] bg-black/10 dark:bg-white/5 border-y border-white/20 flex overflow-hidden shadow-lg z-10">
           {/* Animación de líneas de la cinta */}

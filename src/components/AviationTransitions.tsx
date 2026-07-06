@@ -1136,7 +1136,7 @@ export const AviationTransitions: React.FC<AviationTransitionsProps> = ({
 
           {/* Street Road Block */}
           <div 
-            className={`absolute left-0 right-0 bottom-0 z-0 ${isDarkMode ? 'bg-[#0b0f19]' : 'bg-[#7c4ee6]'}`} 
+            className={`absolute left-0 right-0 bottom-0 z-0 ${isDarkMode ? 'bg-[#070b13]' : 'bg-[#8B5CF6]'}`} 
             style={{ top: 'calc(50% + 70px)' }} 
           >
             {/* Pavement details/Dashed center line */}

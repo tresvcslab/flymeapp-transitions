@@ -5,12 +5,14 @@ interface RunningPersonProps {
   className?: string;
   size?: number;
   state?: 'running' | 'greeting';
+  color?: string;
 }
 
 export const RunningPerson: React.FC<RunningPersonProps> = ({ 
   className = '', 
   size = 80,
-  state = 'running'
+  state = 'running',
+  color = 'white'
 }) => {
   // Speed is 0.75 seconds per full step cycle to make it feel energetic and fluid
   const cycleDuration = 0.75;
@@ -42,7 +44,7 @@ export const RunningPerson: React.FC<RunningPersonProps> = ({
         {/* Back Arm - Joyful greeting wave on the other side */}
         <motion.path 
           d="M48 33 L58 35 L62 25" 
-          stroke="white" 
+          stroke={color} 
           strokeWidth="5" 
           strokeLinecap="round" 
           strokeLinejoin="round" 
@@ -65,14 +67,14 @@ export const RunningPerson: React.FC<RunningPersonProps> = ({
         {/* Back Leg - Straight support leg */}
         <path 
           d="M55 51 L55 81" 
-          stroke="white" 
+          stroke={color} 
           strokeWidth="6" 
           strokeLinecap="round" 
         />
         {/* Front Leg - Slightly angled forward, relaxed */}
         <motion.path 
           d="M51 51 L48 68 L46 81" 
-          stroke="white" 
+          stroke={color} 
           strokeWidth="6.5" 
           strokeLinecap="round" 
           strokeLinejoin="round"
@@ -90,7 +92,7 @@ export const RunningPerson: React.FC<RunningPersonProps> = ({
         {/* Torso & Hips */}
         <path 
           d="M51 51 C53 43 51 36 48 33" 
-          stroke="white" 
+          stroke={color} 
           strokeWidth="8" 
           strokeLinecap="round"
         />
@@ -107,10 +109,10 @@ export const RunningPerson: React.FC<RunningPersonProps> = ({
           }}
         >
           {/* Head */}
-          <circle cx="48" cy="21" r="7.5" fill="white" />
+          <circle cx="48" cy="21" r="7.5" fill={color} />
           
           {/* Cap Peak (Sporty look) */}
-          <path d="M48 14.5 C45 14.5 40 16 38 18 C40 19.5 45 20 48 20 Z" fill="white" />
+          <path d="M48 14.5 C45 14.5 40 16 38 18 C40 19.5 45 20 48 20 Z" fill={color} />
 
           {/* Happy Facing Gesto / Rostro Amigable (^^) */}
           <g transform="translate(1, 0)">
@@ -128,7 +130,7 @@ export const RunningPerson: React.FC<RunningPersonProps> = ({
         {/* Front Arm - Joyful greeting wave below shoulder height */}
         <motion.path 
           d="M48 33 L38 35 L34 25" 
-          stroke="white" 
+          stroke={color} 
           strokeWidth="6" 
           strokeLinecap="round" 
           strokeLinejoin="round" 
@@ -175,7 +177,7 @@ export const RunningPerson: React.FC<RunningPersonProps> = ({
           repeat: Infinity,
           ease: easePattern
         }}
-        stroke="white" 
+        stroke={color} 
         strokeWidth="6" 
         strokeLinecap="round" 
         strokeLinejoin="round" 
@@ -197,7 +199,7 @@ export const RunningPerson: React.FC<RunningPersonProps> = ({
           repeat: Infinity,
           ease: easePattern
         }}
-        stroke="white" 
+        stroke={color} 
         strokeWidth="7" 
         strokeLinecap="round" 
         strokeLinejoin="round" 
@@ -219,7 +221,7 @@ export const RunningPerson: React.FC<RunningPersonProps> = ({
           repeat: Infinity,
           ease: easePattern
         }}
-        stroke="white" 
+        stroke={color} 
         strokeWidth="9" 
         strokeLinecap="round"
       />
@@ -236,7 +238,7 @@ export const RunningPerson: React.FC<RunningPersonProps> = ({
         }}
       >
         {/* Head */}
-        <circle cx="51" cy="21" r="7.5" fill="white" />
+        <circle cx="51" cy="21" r="7.5" fill={color} />
         
         {/* Streamlined Cap Peak - Transitioning to front facing visor on a 3s timeline */}
         <motion.path 
@@ -256,7 +258,7 @@ export const RunningPerson: React.FC<RunningPersonProps> = ({
             repeat: Infinity,
             ease: "easeInOut"
           }}
-          fill="white"
+          fill={color}
         />
 
         {/* Back Cap Adjusting Pin-hole - Fades out when looking front */}
@@ -316,7 +318,7 @@ export const RunningPerson: React.FC<RunningPersonProps> = ({
           repeat: Infinity,
           ease: easePattern
         }}
-        stroke="white" 
+        stroke={color} 
         strokeWidth="7" 
         strokeLinecap="round" 
         strokeLinejoin="round" 
@@ -350,7 +352,7 @@ export const RunningPerson: React.FC<RunningPersonProps> = ({
           repeat: Infinity,
           ease: "linear"
         }}
-        stroke="white" 
+        stroke={color} 
         strokeWidth="6" 
         strokeLinecap="round" 
         strokeLinejoin="round" 

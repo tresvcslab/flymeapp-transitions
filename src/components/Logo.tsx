@@ -3,9 +3,10 @@ import React, { useState } from 'react';
 interface LogoProps {
   className?: string;
   size?: 'sm' | 'md' | 'lg';
+  isPremium?: boolean;
 }
 
-export const Logo: React.FC<LogoProps> = ({ className = '', size = 'md' }) => {
+export const Logo: React.FC<LogoProps> = ({ className = '', size = 'md', isPremium = false }) => {
   const [hasError, setHasError] = useState(false);
 
   const sizeClasses = {
@@ -19,9 +20,9 @@ export const Logo: React.FC<LogoProps> = ({ className = '', size = 'md' }) => {
     return (
       <div className={`flex justify-center items-center select-none z-30 ${className}`}>
         <img
-          src="/logo_white_transparent.png"
+          src={isPremium ? "/logo_black_transparent.png" : "/logo_white_transparent.png"}
           alt="Logo"
-          className={`${logoHeight} w-auto object-contain drop-shadow-md`}
+          className={`${logoHeight} w-auto object-contain drop-shadow-md ${isPremium ? 'brightness-0' : ''}`}
           onError={() => setHasError(true)}
         />
       </div>
@@ -29,7 +30,7 @@ export const Logo: React.FC<LogoProps> = ({ className = '', size = 'md' }) => {
   }
 
   return (
-    <div className={`font-black tracking-tighter flex flex-col items-center select-none text-white ${sizeClasses[size]} ${className}`}>
+    <div className={`font-black tracking-tighter flex flex-col items-center select-none ${isPremium ? 'text-black' : 'text-white'} ${sizeClasses[size]} ${className}`}>
       <div className="flex items-baseline">
         <span>FL</span>
         <span className="ml-[-1px]">¥</span>

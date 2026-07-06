@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { SceneType, ThemeType } from './types';
 import SplashScreen from './components/SplashScreen';
 import { AviationTransitions } from './components/AviationTransitions';
+import { PremiumTransitions } from './components/PremiumTransitions';
 import TripsScreen from './components/TripsScreen';
 
 export default function App() {
@@ -22,6 +23,7 @@ export default function App() {
   const [isTransparent, setIsTransparent] = useState<boolean>(isTransparentParam);
   const [isEmbed, setIsEmbed] = useState<boolean>(isEmbedParam);
   const [hotelAnimState, setHotelAnimState] = useState<'waiting' | 'greeting' | 'running'>('waiting');
+  const [isPremium, setIsPremium] = useState<boolean>(false);
 
   // Trigger countdown timers for non-splash scenes to complete automatically
   useEffect(() => {
@@ -139,6 +141,60 @@ export default function App() {
   // Render the appropriate scene
   const renderScene = () => {
     const isDark = theme === 'dark';
+    
+    if (isPremium) {
+      switch (scene) {
+        case 'splash':
+          return <SplashScreen onAnimationComplete={handleAnimationComplete} />;
+        case 'flights':
+          return (
+            <PremiumTransitions 
+              isAnimatingFlight={true}
+              isAnimatingHotel={false}
+              isAnimatingCar={false}
+              isAnimatingTrips={false}
+              hotelAnimState="waiting"
+              isDarkMode={isDark}
+            />
+          );
+        case 'hotels':
+          return (
+            <PremiumTransitions 
+              isAnimatingFlight={false}
+              isAnimatingHotel={true}
+              isAnimatingCar={false}
+              isAnimatingTrips={false}
+              hotelAnimState={hotelAnimState}
+              isDarkMode={isDark}
+            />
+          );
+        case 'cars':
+          return (
+            <PremiumTransitions 
+              isAnimatingFlight={false}
+              isAnimatingHotel={false}
+              isAnimatingCar={true}
+              isAnimatingTrips={false}
+              hotelAnimState="greeting"
+              isDarkMode={isDark}
+            />
+          );
+        case 'trips':
+          return (
+            <PremiumTransitions 
+              isAnimatingFlight={false}
+              isAnimatingHotel={false}
+              isAnimatingCar={false}
+              isAnimatingTrips={true}
+              hotelAnimState="waiting"
+              isDarkMode={isDark}
+            />
+          );
+        default:
+          return <SplashScreen onAnimationComplete={handleAnimationComplete} />;
+      }
+    }
+
     switch (scene) {
       case 'splash':
         return <SplashScreen onAnimationComplete={handleAnimationComplete} />;
@@ -234,8 +290,20 @@ export default function App() {
             title="Cambiar Tema"
           >
             {theme === 'dark' ? '🌙' : '☀️'}
-        </button>
-      </div>
+          </button>
+          <button
+            className={`px-2 py-1 sm:px-3.5 sm:py-1.5 text-[9px] sm:text-xs font-bold tracking-wider sm:tracking-widest uppercase rounded-full shadow-lg backdrop-blur-md border transition-all duration-300 transform active:scale-95 flex items-center justify-center gap-1 ${
+              isPremium 
+                ? 'bg-gradient-to-r from-amber-500 to-yellow-400 text-slate-950 border-amber-300 font-extrabold scale-105 shadow-[0_0_15px_rgba(245,158,11,0.5)] animate-pulse'
+                : 'border-amber-500/30 bg-amber-500/20 text-amber-200 hover:bg-amber-500/40 hover:border-amber-500/60'
+            }`}
+            title="Premium Mode"
+            onClick={() => setIsPremium(!isPremium)}
+          >
+            <span>✨</span>
+            <span>Premium</span>
+          </button>
+        </div>
       )}
     </main>
   );

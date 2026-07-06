@@ -7,6 +7,7 @@ export interface WalkingPersonProps {
   isDarkMode?: boolean;
   animDelay?: number;
   className?: string;
+  color?: string;
 }
 
 export const WalkingPerson: React.FC<WalkingPersonProps> = ({
@@ -14,7 +15,8 @@ export const WalkingPerson: React.FC<WalkingPersonProps> = ({
   type = 'man',
   isDarkMode = false,
   animDelay = 0,
-  className = ''
+  className = '',
+  color = 'white'
 }) => {
   const cycleDuration = 1.4;
   const easePattern = "linear";
@@ -61,7 +63,7 @@ export const WalkingPerson: React.FC<WalkingPersonProps> = ({
       {/* Back Arm Pulling Suitcase */}
       <motion.path 
          d="M48 33 L35 44 L22 55"
-         stroke="white" 
+         stroke={color} 
          strokeWidth="5.5" 
          strokeLinecap="round" 
          strokeLinejoin="round"
@@ -79,7 +81,7 @@ export const WalkingPerson: React.FC<WalkingPersonProps> = ({
           ]
         }}
         transition={{ duration: cycleDuration, delay: animDelay, repeat: Infinity, ease: easePattern }}
-        stroke="white" 
+        stroke={color} 
         strokeWidth="6.5" 
         strokeLinecap="round" 
         strokeLinejoin="round" 
@@ -97,7 +99,7 @@ export const WalkingPerson: React.FC<WalkingPersonProps> = ({
           ]
         }}
         transition={{ duration: cycleDuration, delay: animDelay, repeat: Infinity, ease: easePattern }}
-        stroke="white" 
+        stroke={color} 
         strokeWidth="8" 
         strokeLinecap="round"
       />
@@ -115,7 +117,7 @@ export const WalkingPerson: React.FC<WalkingPersonProps> = ({
             ]
           }}
           transition={{ duration: cycleDuration, delay: animDelay, repeat: Infinity, ease: easePattern }}
-          fill="white"
+          fill={color}
         />
       )}
 
@@ -126,18 +128,18 @@ export const WalkingPerson: React.FC<WalkingPersonProps> = ({
         }}
         transition={{ duration: cycleDuration, delay: animDelay, repeat: Infinity, ease: easePattern }}
       >
-        <circle cx="49" cy="22" r="7.5" fill="white" />
+        <circle cx="49" cy="22" r="7.5" fill={color} />
         
         {isFemale ? (
            <>
              {/* Hair bun and ponytail */}
-             <circle cx="42" cy="18" r="3.5" fill="white" />
-             <path d="M 43 20 Q 36 28 39 36" stroke="white" strokeWidth="4.5" fill="none" strokeLinecap="round" />
+             <circle cx="42" cy="18" r="3.5" fill={color} />
+             <path d="M 43 20 Q 36 28 39 36" stroke={color} strokeWidth="4.5" fill="none" strokeLinecap="round" />
            </>
         ) : type === 'boy' ? (
-           <path d="M49 14.5 C45 14.5 40 16 38 18 C40 19.5 45 20 49 20 Z" fill="white" />
+           <path d="M49 14.5 C45 14.5 40 16 38 18 C40 19.5 45 20 49 20 Z" fill={color} />
         ) : (
-           <path d="M46 15.5 C 48 14 52 14 55 16" stroke="white" strokeWidth="2.5" strokeLinecap="round" fill="none" />
+           <path d="M46 15.5 C 48 14 52 14 55 16" stroke={color} strokeWidth="2.5" strokeLinecap="round" fill="none" />
         )}
 
         {/* Happy Face */}
@@ -162,7 +164,7 @@ export const WalkingPerson: React.FC<WalkingPersonProps> = ({
           ]
         }}
         transition={{ duration: cycleDuration, delay: animDelay, repeat: Infinity, ease: easePattern }}
-        stroke="white" 
+        stroke={color} 
         strokeWidth="6.5" 
         strokeLinecap="round" 
         strokeLinejoin="round" 
@@ -180,7 +182,7 @@ export const WalkingPerson: React.FC<WalkingPersonProps> = ({
           ]
         }}
         transition={{ duration: cycleDuration, delay: animDelay, repeat: Infinity, ease: easePattern }}
-        stroke="white" 
+        stroke={color} 
         strokeWidth="5.5" 
         strokeLinecap="round" 
         strokeLinejoin="round" 
@@ -192,7 +194,7 @@ export const WalkingPerson: React.FC<WalkingPersonProps> = ({
           animate={{ rotate: [-2, 2, -2], y: [0, -3, 0] }} 
           transition={{ duration: 2.2, delay: animDelay, repeat: Infinity, ease: "easeInOut" }}
         >
-          <path d="M60 48 Q 72 30 78 12" stroke="white" strokeDasharray="2 3" strokeWidth="1.2" fill="none" />
+          <path d="M60 48 Q 72 30 78 12" stroke={color} strokeDasharray="2 3" strokeWidth="1.2" fill="none" />
           <circle cx="78" cy="7" r="7" fill={balloonColor} />
           <path d="M78 14 L 75 18 L 81 18 Z" fill={balloonColor} />
         </motion.g>

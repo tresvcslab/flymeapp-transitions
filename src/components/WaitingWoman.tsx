@@ -5,12 +5,14 @@ interface WaitingWomanProps {
   className?: string;
   size?: number;
   state?: 'waiting' | 'greeting' | 'running';
+  color?: string;
 }
 
 export const WaitingWoman: React.FC<WaitingWomanProps> = ({ 
   className = '', 
   size = 120, 
-  state = 'waiting' 
+  state = 'waiting',
+  color = 'white'
 }) => {
   const cycleDuration = 0.75;
   const easePattern = "easeInOut";
@@ -42,7 +44,7 @@ export const WaitingWoman: React.FC<WaitingWomanProps> = ({
         {/* Back Arm (Resting elegantly at her side) */}
         <path 
           d="M48 33 L42 45 L40 54" 
-          stroke="white" 
+          stroke={color} 
           strokeWidth="5" 
           strokeLinecap="round" 
           strokeLinejoin="round" 
@@ -52,14 +54,14 @@ export const WaitingWoman: React.FC<WaitingWomanProps> = ({
         {/* Back Leg - Standing straight */}
         <path 
           d="M45 52 L45 81" 
-          stroke="white" 
+          stroke={color} 
           strokeWidth="6" 
           strokeLinecap="round" 
         />
         {/* Front Leg - Slightly angled outwards, tapping heel */}
         <motion.path 
           d="M49 52 L52 68 L55 81" 
-          stroke="white" 
+          stroke={color} 
           strokeWidth="6.5" 
           strokeLinecap="round" 
           strokeLinejoin="round"
@@ -77,13 +79,13 @@ export const WaitingWoman: React.FC<WaitingWomanProps> = ({
         {/* Torso - Beautiful curved feminine posture */}
         <path 
           d="M48 52 C46 44, 44 38, 48 33" 
-          stroke="white" 
+          stroke={color} 
           strokeWidth="8" 
           strokeLinecap="round"
         />
 
         {/* Slender neck connection */}
-        <circle cx="48" cy="28.5" r="2" fill="white" />
+        <circle cx="48" cy="28.5" r="2" fill={color} />
 
         {/* Head with dynamic ponytail & lovely facial facing left */}
         <motion.g
@@ -97,12 +99,12 @@ export const WaitingWoman: React.FC<WaitingWomanProps> = ({
           }}
         >
           {/* Head circle */}
-          <circle cx="48" cy="21" r="7.2" fill="white" />
+          <circle cx="48" cy="21" r="7.2" fill={color} />
           
           {/* Cute Feminine Ponytail - Wavy structure extending to the right with gentle dangle */}
           <motion.path 
             d="M42 19 C34 16, 32 23, 27 24 C30 27, 34 23, 42 21"
-            fill="white"
+            fill={color}
             animate={{
               rotate: [0, 6, -4, 0]
             }}
@@ -118,7 +120,7 @@ export const WaitingWoman: React.FC<WaitingWomanProps> = ({
         {/* Front Arm - Raising to do a warm, gentle wave to the left (waiting for him) */}
         <motion.path 
           d="M48 33 L58 35 L62 25" 
-          stroke="white" 
+          stroke={color} 
           strokeWidth="5.5" 
           strokeLinecap="round" 
           strokeLinejoin="round" 
@@ -179,7 +181,7 @@ export const WaitingWoman: React.FC<WaitingWomanProps> = ({
           {/* Back Leg - Joyfully bent back */}
           <motion.path 
             d="M44 52 L38 65 L32 60" 
-            stroke="white" 
+            stroke={color} 
             strokeWidth="6" 
             strokeLinecap="round" 
             strokeLinejoin="round"
@@ -188,7 +190,7 @@ export const WaitingWoman: React.FC<WaitingWomanProps> = ({
           {/* Front Leg - Bent forward slightly */}
           <motion.path 
             d="M48 52 L52 68 L48 78" 
-            stroke="white" 
+            stroke={color} 
             strokeWidth="6.5" 
             strokeLinecap="round" 
             strokeLinejoin="round" 
@@ -197,13 +199,13 @@ export const WaitingWoman: React.FC<WaitingWomanProps> = ({
           {/* Torso */}
           <path 
             d="M46 52 C45 44, 43 38, 47 33" 
-            stroke="white" 
+            stroke={color} 
             strokeWidth="8" 
             strokeLinecap="round"
           />
 
           {/* Neck */}
-          <circle cx="47" cy="28.5" r="2" fill="white" />
+          <circle cx="47" cy="28.5" r="2" fill={color} />
 
           {/* Head & Ponytail jumping/flopping with secondary action */}
           <motion.g
@@ -217,12 +219,12 @@ export const WaitingWoman: React.FC<WaitingWomanProps> = ({
             }}
           >
             {/* Head */}
-            <circle cx="47" cy="21" r="7.2" fill="white" />
+            <circle cx="47" cy="21" r="7.2" fill={color} />
             
             {/* Flapping Ponytail */}
             <path 
               d="M41 19 C31 15, 29 23, 22 23 C26 27, 30 23, 41 21"
-              fill="white"
+              fill={color}
             />
 
             {/* Micro Details on Face (Gesto de Alegría / Rostro Amigable) */}
@@ -242,7 +244,7 @@ export const WaitingWoman: React.FC<WaitingWomanProps> = ({
           {/* Back Arm - Raising happily & waving */}
           <motion.path 
             d="M47 33 L35 28 L28 18" 
-            stroke="white" 
+            stroke={color} 
             strokeWidth="5" 
             strokeLinecap="round" 
             strokeLinejoin="round" 
@@ -256,7 +258,7 @@ export const WaitingWoman: React.FC<WaitingWomanProps> = ({
           {/* Front Arm - Happy waving */}
           <motion.path 
             d="M47 33 L59 26 L68 15" 
-            stroke="white" 
+            stroke={color} 
             strokeWidth="5.5" 
             strokeLinecap="round" 
             strokeLinejoin="round" 
@@ -297,7 +299,7 @@ export const WaitingWoman: React.FC<WaitingWomanProps> = ({
           repeat: Infinity,
           ease: easePattern
         }}
-        stroke="white" 
+        stroke={color} 
         strokeWidth="5.5" 
         strokeLinecap="round" 
         strokeLinejoin="round" 
@@ -319,7 +321,7 @@ export const WaitingWoman: React.FC<WaitingWomanProps> = ({
           repeat: Infinity,
           ease: easePattern
         }}
-        stroke="white" 
+        stroke={color} 
         strokeWidth="6.5" 
         strokeLinecap="round" 
         strokeLinejoin="round" 
@@ -341,7 +343,7 @@ export const WaitingWoman: React.FC<WaitingWomanProps> = ({
           repeat: Infinity,
           ease: easePattern
         }}
-        stroke="white" 
+        stroke={color} 
         strokeWidth="8" 
         strokeLinecap="round"
       />
@@ -351,7 +353,7 @@ export const WaitingWoman: React.FC<WaitingWomanProps> = ({
         cx="47" 
         cy="28.5" 
         r="1.8" 
-        fill="white"
+        fill={color}
         animate={{ y: [0, -1, 0, -1, 0] }}
         transition={{ duration: cycleDuration, repeat: Infinity }}
       />
@@ -369,7 +371,7 @@ export const WaitingWoman: React.FC<WaitingWomanProps> = ({
         }}
       >
         {/* Head */}
-        <circle cx="51" cy="21" r="7.2" fill="white" />
+        <circle cx="51" cy="21" r="7.2" fill={color} />
         
         {/* Ponytail bouncing strongly behind her as she runs */}
         <motion.path 
@@ -385,7 +387,7 @@ export const WaitingWoman: React.FC<WaitingWomanProps> = ({
             repeat: Infinity,
             ease: "easeInOut"
           }}
-          fill="white"
+          fill={color}
         />
 
         {/* Micro face details - Sweet smiling side profile */}
@@ -409,7 +411,7 @@ export const WaitingWoman: React.FC<WaitingWomanProps> = ({
           repeat: Infinity,
           ease: easePattern
         }}
-        stroke="white" 
+        stroke={color} 
         strokeWidth="6.5" 
         strokeLinecap="round" 
         strokeLinejoin="round" 
@@ -431,7 +433,7 @@ export const WaitingWoman: React.FC<WaitingWomanProps> = ({
           repeat: Infinity,
           ease: easePattern
         }}
-        stroke="white" 
+        stroke={color} 
         strokeWidth="5.5" 
         strokeLinecap="round" 
         strokeLinejoin="round" 

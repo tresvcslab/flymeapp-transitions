@@ -149,7 +149,14 @@ export const AviationTransitions: React.FC<AviationTransitionsProps> = ({
           </div>
 
           {/* Global Miniature Travel Skylines Silhouette / Replica */}
-          <div className="absolute inset-x-0 bottom-4 h-16 pointer-events-none z-0 flex items-end justify-between px-6 opacity-95">
+          <div className="absolute inset-x-0 h-16 pointer-events-none z-0 flex items-end justify-between px-6 opacity-95" style={{ bottom: 'calc(56px + 15%)' }}>
+            {/* Horizontal ground/floor line (piso) */}
+            <div 
+              className={`absolute bottom-0 left-0 right-0 h-[2px] z-10 ${
+                isDarkMode ? 'bg-slate-800/80' : 'bg-white/75'
+              }`} 
+            />
+
             {/* SVG Gradients & Glow Filters Definitions */}
             <svg className="absolute w-0 h-0" width="0" height="0">
               <defs>
@@ -534,7 +541,7 @@ export const AviationTransitions: React.FC<AviationTransitionsProps> = ({
           </div>
 
           {/* Cozy Neighborhood storefront Backdrop (Cars Section) */}
-          <div className="absolute inset-x-0 bottom-4 h-32 pointer-events-none z-0 overflow-hidden flex justify-center opacity-85">
+          <div className="absolute inset-x-0 h-32 pointer-events-none z-0 overflow-hidden flex justify-center opacity-85" style={{ bottom: 'calc(16px + 15%)' }}>
             <svg 
               viewBox="0 0 800 200" 
               className={`w-full max-w-4xl h-full ${
@@ -1036,7 +1043,7 @@ export const AviationTransitions: React.FC<AviationTransitionsProps> = ({
           </motion.div>
 
           {/* Waving family */}
-          <div className="absolute flex items-end justify-center gap-4 sm:gap-10 scale-75 sm:scale-100 origin-bottom z-20 pointer-events-none" style={{ top: '60%' }}>
+          <div className="absolute flex items-end justify-center gap-4 sm:gap-10 scale-75 sm:scale-100 origin-bottom z-20 pointer-events-none" style={{ bottom: 'calc(24px + 15%)' }}>
             <motion.div
               initial={{ opacity: 0, scale: 0.5, y: 30 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}

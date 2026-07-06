@@ -467,7 +467,7 @@ export const PremiumTransitions: React.FC<PremiumTransitionsProps> = ({
             >
               <defs>
                 <linearGradient id="lightConeGradPremium" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" stopColor="#FBBF24" stopOpacity="0.3" />
+                  <stop offset="0%" stopColor="#FBBF24" stopOpacity="0.55" />
                   <stop offset="100%" stopColor="#FBBF24" stopOpacity="0" />
                 </linearGradient>
               </defs>
@@ -478,26 +478,26 @@ export const PremiumTransitions: React.FC<PremiumTransitionsProps> = ({
                 y1="160" 
                 x2="800" 
                 y2="160" 
-                stroke="#525252" 
+                stroke="#3A1B58" 
                 strokeWidth="2.5" 
-                strokeOpacity="0.25" 
+                strokeOpacity="0.45" 
               />
 
               {/* Decorative Trees - Left Side */}
               <g id="left-trees">
                 {/* Trunk 1 */}
-                <line x1="50" y1="120" x2="50" y2="160" stroke="#737373" strokeWidth="2.5" strokeOpacity="0.4" />
+                <line x1="50" y1="120" x2="50" y2="160" stroke="#3A1B58" strokeWidth="2.5" strokeOpacity="0.6" />
                 {/* Leafy canopy 1 */}
-                <circle cx="50" cy="115" r="16" fill="rgba(115, 115, 115, 0.06)" stroke="#737373" strokeWidth="1" strokeOpacity="0.4" />
-                <circle cx="38" cy="105" r="13" fill="rgba(115, 115, 115, 0.06)" stroke="#737373" strokeWidth="1" strokeOpacity="0.4" />
-                <circle cx="62" cy="105" r="13" fill="rgba(115, 115, 115, 0.06)" stroke="#737373" strokeWidth="1" strokeOpacity="0.4" />
+                <circle cx="50" cy="115" r="16" fill="rgba(58, 27, 88, 0.06)" stroke="#3A1B58" strokeWidth="1" strokeOpacity="0.6" />
+                <circle cx="38" cy="105" r="13" fill="rgba(58, 27, 88, 0.06)" stroke="#3A1B58" strokeWidth="1" strokeOpacity="0.6" />
+                <circle cx="62" cy="105" r="13" fill="rgba(58, 27, 88, 0.06)" stroke="#3A1B58" strokeWidth="1" strokeOpacity="0.6" />
 
                 {/* Trunk 2 */}
-                <line x1="85" y1="130" x2="85" y2="160" stroke="#737373" strokeWidth="2" strokeOpacity="0.4" />
+                <line x1="85" y1="130" x2="85" y2="160" stroke="#3A1B58" strokeWidth="2" strokeOpacity="0.6" />
                 {/* Leafy canopy 2 */}
-                <circle cx="85" cy="125" r="12" fill="rgba(115, 115, 115, 0.05)" stroke="#737373" strokeWidth="1" strokeOpacity="0.35" />
-                <circle cx="76" cy="118" r="10" fill="rgba(115, 115, 115, 0.05)" stroke="#737373" strokeWidth="1" strokeOpacity="0.35" />
-                <circle cx="94" cy="118" r="10" fill="rgba(115, 115, 115, 0.05)" stroke="#737373" strokeWidth="1" strokeOpacity="0.35" />
+                <circle cx="85" cy="125" r="12" fill="rgba(58, 27, 88, 0.05)" stroke="#3A1B58" strokeWidth="1" strokeOpacity="0.55" />
+                <circle cx="76" cy="118" r="10" fill="rgba(58, 27, 88, 0.05)" stroke="#3A1B58" strokeWidth="1" strokeOpacity="0.55" />
+                <circle cx="94" cy="118" r="10" fill="rgba(58, 27, 88, 0.05)" stroke="#3A1B58" strokeWidth="1" strokeOpacity="0.55" />
               </g>
 
               {/* STOREFRONT A: Duplex Flats (x=110 to x=200) */}
@@ -509,10 +509,10 @@ export const PremiumTransitions: React.FC<PremiumTransitionsProps> = ({
                   width="90" 
                   height="110" 
                   rx="2" 
-                  fill="rgba(64, 64, 64, 0.04)" 
-                  stroke="#404040" 
+                  fill="rgba(58, 27, 88, 0.03)" 
+                  stroke="#3A1B58" 
                   strokeWidth="1.2" 
-                  strokeOpacity="0.4"
+                  strokeOpacity="0.65"
                 />
                 {/* Flat Roof Trim */}
                 <rect 
@@ -521,19 +521,19 @@ export const PremiumTransitions: React.FC<PremiumTransitionsProps> = ({
                   width="98" 
                   height="4" 
                   rx="1" 
-                  fill="rgba(64, 64, 64, 0.15)" 
-                  stroke="#404040" 
+                  fill="rgba(58, 27, 88, 0.12)" 
+                  stroke="#3A1B58" 
                   strokeWidth="1" 
-                  strokeOpacity="0.5"
+                  strokeOpacity="0.75"
                 />
 
                 {/* Ground floor door with classic arch */}
                 <path 
                   d="M 140 160 A 15 15 0 0 1 170 160 Z" 
-                  fill="rgba(64, 64, 64, 0.1)" 
-                  stroke="#404040" 
+                  fill="rgba(58, 27, 88, 0.1)" 
+                  stroke="#3A1B58" 
                   strokeWidth="1.2" 
-                  strokeOpacity="0.5"
+                  strokeOpacity="0.75"
                 />
                 <rect 
                   x="148" 
@@ -552,12 +552,12 @@ export const PremiumTransitions: React.FC<PremiumTransitionsProps> = ({
                   height="26" 
                   rx="1" 
                   fill="#FFFFFF" 
-                  stroke="#404040"
+                  stroke="#3A1B58"
                   strokeWidth="1"
-                  strokeOpacity="0.3"
+                  strokeOpacity="0.45"
                 />
-                <line x1="125" y1="73" x2="143" y2="73" stroke="#404040" strokeWidth="1" strokeOpacity="0.3" />
-                <line x1="134" y1="60" x2="134" y2="86" stroke="#404040" strokeWidth="1" strokeOpacity="0.3" />
+                <line x1="125" y1="73" x2="143" y2="73" stroke="#3A1B58" strokeWidth="1" strokeOpacity="0.45" />
+                <line x1="134" y1="60" x2="134" y2="86" stroke="#3A1B58" strokeWidth="1" strokeOpacity="0.45" />
 
                 <rect 
                   x="167" 
@@ -566,13 +566,13 @@ export const PremiumTransitions: React.FC<PremiumTransitionsProps> = ({
                   height="26" 
                   rx="1" 
                   fill="#FEF08A" 
-                  fillOpacity="0.85" 
-                  stroke="#404040"
+                  fillOpacity="0.9" 
+                  stroke="#3A1B58"
                   strokeWidth="1"
-                  strokeOpacity="0.3"
+                  strokeOpacity="0.45"
                 />
-                <line x1="167" y1="73" x2="185" y2="73" stroke="#404040" strokeWidth="1" strokeOpacity="0.3" />
-                <line x1="176" y1="60" x2="176" y2="86" stroke="#404040" strokeWidth="1" strokeOpacity="0.3" />
+                <line x1="167" y1="73" x2="185" y2="73" stroke="#3A1B58" strokeWidth="1" strokeOpacity="0.45" />
+                <line x1="176" y1="60" x2="176" y2="86" stroke="#3A1B58" strokeWidth="1" strokeOpacity="0.45" />
 
                 {/* Balcony Rail at Row 2 */}
                 <rect 
@@ -582,9 +582,9 @@ export const PremiumTransitions: React.FC<PremiumTransitionsProps> = ({
                   height="20" 
                   rx="1" 
                   fill="transparent" 
-                  stroke="#404040" 
+                  stroke="#3A1B58" 
                   strokeWidth="1.2" 
-                  strokeOpacity="0.4"
+                  strokeOpacity="0.65"
                 />
                 {[...Array(6)].map((_, idx) => (
                   <line 
@@ -593,9 +593,9 @@ export const PremiumTransitions: React.FC<PremiumTransitionsProps> = ({
                     y1="100" 
                     x2={125 + idx * 12} 
                     y2="120" 
-                    stroke="#404040" 
+                    stroke="#3A1B58" 
                     strokeWidth="1" 
-                    strokeOpacity="0.4"
+                    strokeOpacity="0.55"
                   />
                 ))}
               </g>
@@ -603,11 +603,11 @@ export const PremiumTransitions: React.FC<PremiumTransitionsProps> = ({
               {/* COZY STREETLIGHT 1 (x=215) */}
               <g id="streetlight-1">
                 {/* Mast */}
-                <rect x="214" y="65" width="2.5" height="95" fill="#262626" fillOpacity="0.5" />
+                <rect x="214" y="65" width="2.5" height="95" fill="#3A1B58" fillOpacity="0.75" />
                 {/* Curved top ring */}
-                <path d="M 214 65 Q 206 58 204 68" fill="none" stroke="#262626" strokeWidth="2" strokeOpacity="0.6" />
+                <path d="M 214 65 Q 206 58 204 68" fill="none" stroke="#3A1B58" strokeWidth="2" strokeOpacity="0.75" />
                 {/* Lantern fixture */}
-                <polygon points="201,68 207,68 208,74 200,74" fill="#262626" fillOpacity="0.7" />
+                <polygon points="201,68 207,68 208,74 200,74" fill="#3A1B58" fillOpacity="0.85" />
                 {/* Glow cone */}
                 <polygon 
                   points="204,74 150,160 258,160" 
@@ -622,17 +622,17 @@ export const PremiumTransitions: React.FC<PremiumTransitionsProps> = ({
                 {/* Room Skylight Base */}
                 <polygon 
                   points="225,75 285,45 345,75 345,160 225,160" 
-                  fill="rgba(64, 64, 64, 0.02)" 
-                  stroke="#404040" 
+                  fill="rgba(58, 27, 88, 0.03)" 
+                  stroke="#3A1B58" 
                   strokeWidth="1.2" 
-                  strokeOpacity="0.4"
+                  strokeOpacity="0.65"
                 />
                 {/* Slanted Glass Roof Panels */}
-                <line x1="225" y1="75" x2="285" y2="45" stroke="#404040" strokeWidth="1.8" strokeOpacity="0.5" />
-                <line x1="285" y1="45" x2="345" y2="75" stroke="#404040" strokeWidth="1.8" strokeOpacity="0.5" />
-                <line x1="255" y1="60" x2="255" y2="160" stroke="#404040" strokeWidth="1" strokeOpacity="0.25" />
-                <line x1="285" y1="45" x2="285" y2="160" stroke="#404040" strokeWidth="1.2" strokeOpacity="0.3" />
-                <line x1="315" y1="60" x2="315" y2="160" stroke="#404040" strokeWidth="1" strokeOpacity="0.25" />
+                <line x1="225" y1="75" x2="285" y2="45" stroke="#3A1B58" strokeWidth="1.8" strokeOpacity="0.7" />
+                <line x1="285" y1="45" x2="345" y2="75" stroke="#3A1B58" strokeWidth="1.8" strokeOpacity="0.7" />
+                <line x1="255" y1="60" x2="255" y2="160" stroke="#3A1B58" strokeWidth="1" strokeOpacity="0.35" />
+                <line x1="285" y1="45" x2="285" y2="160" stroke="#3A1B58" strokeWidth="1.2" strokeOpacity="0.4" />
+                <line x1="315" y1="60" x2="315" y2="160" stroke="#3A1B58" strokeWidth="1" strokeOpacity="0.35" />
 
                 {/* SIGNBOARD "CAFÉ" */}
                 <rect 
@@ -642,14 +642,14 @@ export const PremiumTransitions: React.FC<PremiumTransitionsProps> = ({
                   height="16" 
                   rx="2" 
                   fill="#FFFFFF" 
-                  stroke="#404040" 
+                  stroke="#3A1B58" 
                   strokeWidth="1.2" 
-                  strokeOpacity="0.6"
+                  strokeOpacity="0.8"
                 />
                 <text 
                   x="285" 
                   y="89" 
-                  fill="#404040" 
+                  fill="#3A1B58" 
                   fontSize="7.5" 
                   fontWeight="bold" 
                   textAnchor="middle" 
@@ -661,17 +661,17 @@ export const PremiumTransitions: React.FC<PremiumTransitionsProps> = ({
                 {/* Cozy Striped Awning */}
                 <polygon 
                   points="235,97 335,97 340,111 230,111" 
-                  fill="rgba(64, 64, 64, 0.1)" 
-                  stroke="#404040" 
+                  fill="rgba(58, 27, 88, 0.08)" 
+                  stroke="#3A1B58" 
                   strokeWidth="0.8" 
-                  strokeOpacity="0.5"
+                  strokeOpacity="0.75"
                 />
                 {/* Stripes */}
                 {[...Array(9)].map((_, idx) => (
                   <polygon 
                     key={`strip-${idx}`} 
                     points={`${235 + idx * 11},97 ${241 + idx * 11},97 ${243 + idx * 11},111 ${237 + idx * 11},111`} 
-                    fill={idx % 2 === 0 ? "#FFFFFF" : "rgba(64, 64, 64, 0.3)"} 
+                    fill={idx % 2 === 0 ? "#FFFFFF" : "rgba(58, 27, 88, 0.22)"} 
                   />
                 ))}
 
@@ -683,16 +683,16 @@ export const PremiumTransitions: React.FC<PremiumTransitionsProps> = ({
                   height="34" 
                   rx="1" 
                   fill="#FFFFFF" 
-                  stroke="#404040" 
+                  stroke="#3A1B58" 
                   strokeWidth="1" 
-                  strokeOpacity="0.4"
+                  strokeOpacity="0.5"
                 />
                 
                 {/* Miniature Coffee Cups shadow silhouette in displays */}
-                <path d="M 245 151 L 249 151 L 249 146 L 245 146 Z" fill="#404040" fillOpacity="0.7" />
-                <path d="M 260 151 L 265 151 L 266 142 L 259 142 Z" fill="#404040" fillOpacity="0.6" />
-                <circle cx="262" cy="139" r="2.2" fill="#404040" fillOpacity="0.4" />
-                <path d="M 315 151 L 320 151 L 320 144 L 315 144 Z" fill="#404040" fillOpacity="0.7" />
+                <path d="M 245 151 L 249 151 L 249 146 L 245 146 Z" fill="#3A1B58" fillOpacity="0.8" />
+                <path d="M 260 151 L 265 151 L 266 142 L 259 142 Z" fill="#3A1B58" fillOpacity="0.7" />
+                <circle cx="262" cy="139" r="2.2" fill="#3A1B58" fillOpacity="0.5" />
+                <path d="M 315 151 L 320 151 L 320 144 L 315 144 Z" fill="#3A1B58" fillOpacity="0.8" />
               </g>
 
               {/* STOREFRONT C: Townhome A with Gable Roof (x=370 to x=470) */}
@@ -704,24 +704,24 @@ export const PremiumTransitions: React.FC<PremiumTransitionsProps> = ({
                   width="95" 
                   height="95" 
                   rx="1" 
-                  fill="rgba(64, 64, 64, 0.03)" 
-                  stroke="#404040" 
+                  fill="rgba(58, 27, 88, 0.03)" 
+                  stroke="#3A1B58" 
                   strokeWidth="1.2" 
-                  strokeOpacity="0.4"
+                  strokeOpacity="0.65"
                 />
                 {/* Triangular Gable Roof */}
                 <polygon 
                   points="364,65 417.5,22 471,65" 
-                  fill="rgba(64, 64, 64, 0.12)" 
-                  stroke="#404040" 
+                  fill="rgba(58, 27, 88, 0.12)" 
+                  stroke="#3A1B58" 
                   strokeWidth="1.2" 
-                  strokeOpacity="0.5"
+                  strokeOpacity="0.75"
                 />
 
                 {/* Cozy Attic Circular window */}
-                <circle cx="417.5" cy="45" r="9" fill="#FFFFFF" stroke="#404040" strokeWidth="1" strokeOpacity="0.4" />
-                <line x1="417.5" y1="36" x2="417.5" y2="54" stroke="#404040" strokeWidth="1" strokeOpacity="0.3" />
-                <line x1="408.5" y1="45" x2="426.5" y2="45" stroke="#404040" strokeWidth="1" strokeOpacity="0.3" />
+                <circle cx="417.5" cy="45" r="9" fill="#FFFFFF" stroke="#3A1B58" strokeWidth="1" strokeOpacity="0.5" />
+                <line x1="417.5" y1="36" x2="417.5" y2="54" stroke="#3A1B58" strokeWidth="1" strokeOpacity="0.4" />
+                <line x1="408.5" y1="45" x2="426.5" y2="45" stroke="#3A1B58" strokeWidth="1" strokeOpacity="0.4" />
 
                 {/* Second Floor Windows */}
                 <rect 
@@ -731,13 +731,13 @@ export const PremiumTransitions: React.FC<PremiumTransitionsProps> = ({
                   height="28" 
                   rx="1" 
                   fill="#FEF08A" 
-                  fillOpacity="0.85" 
-                  stroke="#404040"
+                  fillOpacity="0.9" 
+                  stroke="#3A1B58"
                   strokeWidth="1"
-                  strokeOpacity="0.3"
+                  strokeOpacity="0.45"
                 />
-                <line x1="382" y1="92" x2="404" y2="92" stroke="#404040" strokeOpacity="0.3" />
-                <line x1="393" y1="78" x2="393" y2="106" stroke="#404040" strokeOpacity="0.3" />
+                <line x1="382" y1="92" x2="404" y2="92" stroke="#3A1B58" strokeOpacity="0.4" />
+                <line x1="393" y1="78" x2="393" y2="106" stroke="#3A1B58" strokeOpacity="0.4" />
 
                 <rect 
                   x="431" 
@@ -746,12 +746,12 @@ export const PremiumTransitions: React.FC<PremiumTransitionsProps> = ({
                   height="28" 
                   rx="1" 
                   fill="#FFFFFF" 
-                  stroke="#404040"
+                  stroke="#3A1B58"
                   strokeWidth="1"
-                  strokeOpacity="0.3"
+                  strokeOpacity="0.45"
                 />
-                <line x1="431" y1="92" x2="453" y2="92" stroke="#404040" strokeOpacity="0.3" />
-                <line x1="442" y1="78" x2="442" y2="106" stroke="#404040" strokeOpacity="0.3" />
+                <line x1="431" y1="92" x2="453" y2="92" stroke="#3A1B58" strokeOpacity="0.4" />
+                <line x1="442" y1="78" x2="442" y2="106" stroke="#3A1B58" strokeOpacity="0.4" />
 
                 {/* Ground floor door */}
                 <rect 
@@ -759,16 +759,16 @@ export const PremiumTransitions: React.FC<PremiumTransitionsProps> = ({
                   y="156" 
                   width="43" 
                   height="4" 
-                  fill="#404040" 
-                  fillOpacity="0.6"
+                  fill="#3A1B58" 
+                  fillOpacity="0.8"
                 />
                 <rect 
                   x="400" 
                   y="152" 
                   width="35" 
                   height="4" 
-                  fill="#404040" 
-                  fillOpacity="0.4"
+                  fill="#3A1B58" 
+                  fillOpacity="0.55"
                 />
                 <rect 
                   x="404" 
@@ -776,22 +776,22 @@ export const PremiumTransitions: React.FC<PremiumTransitionsProps> = ({
                   width="27" 
                   height="38" 
                   rx="1" 
-                  fill="rgba(64, 64, 64, 0.08)" 
-                  stroke="#404040" 
+                  fill="rgba(58, 27, 88, 0.08)" 
+                  stroke="#3A1B58" 
                   strokeWidth="1.2" 
-                  strokeOpacity="0.5"
+                  strokeOpacity="0.75"
                 />
-                <rect x="410" y="120" width="15" height="15" fill="#FFFFFF" stroke="#404040" strokeWidth="0.8" strokeOpacity="0.4" />
+                <rect x="410" y="120" width="15" height="15" fill="#FFFFFF" stroke="#3A1B58" strokeWidth="0.8" strokeOpacity="0.45" />
               </g>
 
               {/* COZY STREETLIGHT 2 (x=480) */}
               <g id="streetlight-2">
                 {/* Mast */}
-                <rect x="479" y="65" width="2.5" height="95" fill="#262626" fillOpacity="0.5" />
+                <rect x="479" y="65" width="2.5" height="95" fill="#3A1B58" fillOpacity="0.75" />
                 {/* Curved top arm */}
-                <path d="M 479 65 Q 487 58 489 68" fill="none" stroke="#262626" strokeWidth="2" strokeOpacity="0.6" />
+                <path d="M 479 65 Q 487 58 489 68" fill="none" stroke="#3A1B58" strokeWidth="2" strokeOpacity="0.75" />
                 {/* Lantern */}
-                <polygon points="485,68 491,68 492,74 484,74" fill="#262626" fillOpacity="0.7" />
+                <polygon points="485,68 491,68 492,74 484,74" fill="#3A1B58" fillOpacity="0.85" />
                 {/* Glow cone */}
                 <polygon 
                   points="488,74 434,160 542,160" 
@@ -810,14 +810,14 @@ export const PremiumTransitions: React.FC<PremiumTransitionsProps> = ({
                   width="110" 
                   height="100" 
                   rx="1.5" 
-                  fill="rgba(64, 64, 64, 0.03)" 
-                  stroke="#404040" 
+                  fill="rgba(58, 27, 88, 0.03)" 
+                  stroke="#3A1B58" 
                   strokeWidth="1.2" 
-                  strokeOpacity="0.4"
+                  strokeOpacity="0.65"
                 />
                 {/* Elegant top cornice */}
-                <rect x="485" y="56" width="120" height="5" fill="rgba(64, 64, 64, 0.15)" />
-                <polygon points="490,56 545,45 600,56" fill="rgba(64, 64, 64, 0.1)" stroke="#404040" strokeWidth="1" strokeOpacity="0.4" />
+                <rect x="485" y="56" width="120" height="5" fill="rgba(58, 27, 88, 0.15)" />
+                <polygon points="490,56 545,45 600,56" fill="rgba(58, 27, 88, 0.1)" stroke="#3A1B58" strokeWidth="1" strokeOpacity="0.6" />
 
                 {/* Large Boutique display window */}
                 <rect 
@@ -827,13 +827,13 @@ export const PremiumTransitions: React.FC<PremiumTransitionsProps> = ({
                   height="45" 
                   rx="2" 
                   fill="#FFFFFF" 
-                  stroke="#404040" 
+                  stroke="#3A1B58" 
                   strokeWidth="1.2" 
-                  strokeOpacity="0.4"
+                  strokeOpacity="0.55"
                 />
                 
                 {/* Dress silhouette */}
-                <path d="M 520 148 L 530 148 M 525 148 L 525 130 Q 520 118 525 118 Q 530 118 525 130 Z" fill="#404040" fillOpacity="0.7" />
+                <path d="M 520 148 L 530 148 M 525 148 L 525 130 Q 520 118 525 118 Q 530 118 525 130 Z" fill="#3A1B58" fillOpacity="0.8" />
 
                 {/* Upper classic shutter window */}
                 <rect 
@@ -843,12 +843,12 @@ export const PremiumTransitions: React.FC<PremiumTransitionsProps> = ({
                   height="22" 
                   rx="1" 
                   fill="#FFFFFF" 
-                  stroke="#404040"
+                  stroke="#3A1B58"
                   strokeWidth="1"
-                  strokeOpacity="0.3"
+                  strokeOpacity="0.45"
                 />
-                <line x1="530" y1="83" x2="560" y2="83" stroke="#404040" strokeOpacity="0.3" />
-                <line x1="545" y1="72" x2="545" y2="94" stroke="#404040" strokeOpacity="0.3" />
+                <line x1="530" y1="83" x2="560" y2="83" stroke="#3A1B58" strokeOpacity="0.4" />
+                <line x1="545" y1="72" x2="545" y2="94" stroke="#3A1B58" strokeOpacity="0.4" />
 
                 {/* Shop Entrance under mini awning */}
                 <rect 
@@ -856,10 +856,10 @@ export const PremiumTransitions: React.FC<PremiumTransitionsProps> = ({
                   y="105" 
                   width="32" 
                   height="55" 
-                  fill="rgba(64, 64, 64, 0.08)" 
-                  stroke="#404040" 
+                  fill="rgba(58, 27, 88, 0.08)" 
+                  stroke="#3A1B58" 
                   strokeWidth="1" 
-                  strokeOpacity="0.4"
+                  strokeOpacity="0.6"
                 />
                 {/* Lit doorway slot */}
                 <rect x="564" y="112" width="20" height="38" rx="0.5" fill="#FEF08A" fillOpacity="0.95" />
@@ -873,22 +873,22 @@ export const PremiumTransitions: React.FC<PremiumTransitionsProps> = ({
                   width="85" 
                   height="80" 
                   rx="1" 
-                  fill="rgba(64, 64, 64, 0.03)" 
-                  stroke="#404040" 
+                  fill="rgba(58, 27, 88, 0.03)" 
+                  stroke="#3A1B58" 
                   strokeWidth="1.2" 
-                  strokeOpacity="0.4"
+                  strokeOpacity="0.65"
                 />
                 {/* Steep Pitch Roof */}
                 <polygon 
                   points="610,80 657.5,35 705,80" 
-                  fill="rgba(64, 64, 64, 0.12)" 
-                  stroke="#404040" 
+                  fill="rgba(58, 27, 88, 0.12)" 
+                  stroke="#3A1B58" 
                   strokeWidth="1.2" 
-                  strokeOpacity="0.5"
+                  strokeOpacity="0.75"
                 />
 
                 {/* Elegant vertical attic window */}
-                <rect x="650" y="50" width="15" height="20" rx="1" fill="#FFFFFF" stroke="#404040" strokeWidth="1" strokeOpacity="0.4" />
+                <rect x="650" y="50" width="15" height="20" rx="1" fill="#FFFFFF" stroke="#3A1B58" strokeWidth="1" strokeOpacity="0.5" />
 
                 {/* Ground floor multi-pane cozy window */}
                 <rect 
@@ -898,38 +898,38 @@ export const PremiumTransitions: React.FC<PremiumTransitionsProps> = ({
                   height="45" 
                   rx="2" 
                   fill="#FEF08A" 
-                  fillOpacity="0.45" 
-                  stroke="#404040" 
+                  fillOpacity="0.6" 
+                  stroke="#3A1B58" 
                   strokeWidth="1" 
-                  strokeOpacity="0.3"
+                  strokeOpacity="0.45"
                 />
-                <line x1="630" y1="110" x2="685" y2="110" stroke="#404040" strokeOpacity="0.2" />
-                <line x1="630" y1="125" x2="685" y2="125" stroke="#404040" strokeOpacity="0.2" />
-                <line x1="648" y1="95" x2="648" y2="140" stroke="#404040" strokeOpacity="0.2" />
-                <line x1="666" y1="95" x2="666" y2="140" stroke="#404040" strokeOpacity="0.2" />
+                <line x1="630" y1="110" x2="685" y2="110" stroke="#3A1B58" strokeOpacity="0.35" />
+                <line x1="630" y1="125" x2="685" y2="125" stroke="#3A1B58" strokeOpacity="0.35" />
+                <line x1="648" y1="95" x2="648" y2="140" stroke="#3A1B58" strokeOpacity="0.35" />
+                <line x1="666" y1="95" x2="666" y2="140" stroke="#3A1B58" strokeOpacity="0.35" />
               </g>
 
               {/* Decorative Trees - Right Side */}
               <g id="right-trees">
                 {/* Trunk 1 */}
-                <line x1="720" y1="125" x2="720" y2="160" stroke="#737373" strokeWidth="2" strokeOpacity="0.4" />
+                <line x1="720" y1="125" x2="720" y2="160" stroke="#3A1B58" strokeWidth="2" strokeOpacity="0.6" />
                 {/* Leafy canopy 1 */}
-                <circle cx="720" cy="120" r="14" fill="rgba(115, 115, 115, 0.05)" stroke="#737373" strokeWidth="1" strokeOpacity="0.4" />
-                <circle cx="710" cy="112" r="11" fill="rgba(115, 115, 115, 0.05)" stroke="#737373" strokeWidth="1" strokeOpacity="0.4" />
-                <circle cx="730" cy="112" r="11" fill="rgba(115, 115, 115, 0.05)" stroke="#737373" strokeWidth="1" strokeOpacity="0.4" />
+                <circle cx="720" cy="120" r="14" fill="rgba(58, 27, 88, 0.05)" stroke="#3A1B58" strokeWidth="1" strokeOpacity="0.6" />
+                <circle cx="710" cy="112" r="11" fill="rgba(58, 27, 88, 0.05)" stroke="#3A1B58" strokeWidth="1" strokeOpacity="0.6" />
+                <circle cx="730" cy="112" r="11" fill="rgba(58, 27, 88, 0.05)" stroke="#3A1B58" strokeWidth="1" strokeOpacity="0.6" />
 
                 {/* Trunk 2 */}
-                <line x1="755" y1="115" x2="755" y2="160" stroke="#737373" strokeWidth="2.5" strokeOpacity="0.4" />
+                <line x1="755" y1="115" x2="755" y2="160" stroke="#3A1B58" strokeWidth="2.5" strokeOpacity="0.6" />
                 {/* Leafy canopy 2 */}
-                <circle cx="755" cy="108" r="17" fill="rgba(115, 115, 115, 0.05)" stroke="#737373" strokeWidth="1" strokeOpacity="0.4" />
-                <circle cx="742" cy="98" r="14" fill="rgba(115, 115, 115, 0.05)" stroke="#737373" strokeWidth="1" strokeOpacity="0.4" />
-                <circle cx="768" cy="98" r="14" fill="rgba(115, 115, 115, 0.05)" stroke="#737373" strokeWidth="1" strokeOpacity="0.4" />
+                <circle cx="755" cy="108" r="17" fill="rgba(58, 27, 88, 0.05)" stroke="#3A1B58" strokeWidth="1" strokeOpacity="0.6" />
+                <circle cx="742" cy="98" r="14" fill="rgba(58, 27, 88, 0.05)" stroke="#3A1B58" strokeWidth="1" strokeOpacity="0.6" />
+                <circle cx="768" cy="98" r="14" fill="rgba(58, 27, 88, 0.05)" stroke="#3A1B58" strokeWidth="1" strokeOpacity="0.6" />
               </g>
             </svg>
           </div>
 
           {/* Speed/Road lines */}
-          <div className="absolute inset-x-0 h-1 bg-slate-300/40" style={{ top: '55%' }} />
+          <div className="absolute inset-x-0 h-1 bg-[#3A1B58]/25" style={{ top: '55%' }} />
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
             {[...Array(6)].map((_, i) => (
               <motion.div
@@ -941,7 +941,7 @@ export const PremiumTransitions: React.FC<PremiumTransitionsProps> = ({
                   x: [250, -250]
                 }}
                 transition={{ duration: 1.5, delay: i * 0.2, repeat: Infinity, ease: "linear" }}
-                className="absolute h-0.5 w-16 bg-slate-400/50 rounded-full blur-xs"
+                className="absolute h-0.5 w-16 bg-[#3A1B58]/45 rounded-full blur-xs"
                 style={{ top: `${52 + (i * 2)}%` }}
               />
             ))}
@@ -1067,7 +1067,7 @@ export const PremiumTransitions: React.FC<PremiumTransitionsProps> = ({
           </div>
 
           {/* Sidewalk curb line */}
-          <div className="absolute left-0 right-0 h-[2px] z-0 bg-neutral-400/35" style={{ top: 'calc(50% + 70px)' }} />
+          <div className="absolute left-0 right-0 h-[2px] z-0 bg-[#3A1B58]/35" style={{ top: 'calc(50% + 70px)' }} />
 
           {/* Street Road Block */}
           <div 
@@ -1077,7 +1077,7 @@ export const PremiumTransitions: React.FC<PremiumTransitionsProps> = ({
             {/* Dashed center line */}
             <div className="absolute top-6 left-0 right-0 h-[3px] flex gap-8 justify-around px-8 opacity-45">
               {[...Array(16)].map((_, i) => (
-                <div key={`line-${i}`} className="w-12 h-full bg-neutral-400/30 rounded-full" />
+                <div key={`line-${i}`} className="w-12 h-full bg-[#3A1B58]/30 rounded-full" />
               ))}
             </div>
           </div>
@@ -1091,23 +1091,23 @@ export const PremiumTransitions: React.FC<PremiumTransitionsProps> = ({
                 className="absolute left-[8%] z-0" 
                 style={{ bottom: 'calc(50% - 69px)' }}
               >
-                <svg viewBox="0 0 140 220" className="w-[110px] h-[178px] text-neutral-400 pointer-events-none opacity-80">
-                  <rect x="10" y="10" width="120" height="210" rx="2" fill="rgba(0, 0, 0, 0.02)" stroke="currentColor" strokeWidth="1" strokeOpacity="0.4" />
-                  <polygon points="10,10 70,-10 130,10" fill="rgba(0, 0, 0, 0.04)" stroke="currentColor" strokeWidth="1" strokeOpacity="0.4" />
+                <svg viewBox="0 0 140 220" className="w-[110px] h-[178px] text-[#3A1B58]/80 pointer-events-none opacity-80">
+                  <rect x="10" y="10" width="120" height="210" rx="2" fill="rgba(58, 27, 88, 0.03)" stroke="currentColor" strokeWidth="1.2" strokeOpacity="0.65" />
+                  <polygon points="10,10 70,-10 130,10" fill="rgba(58, 27, 88, 0.05)" stroke="currentColor" strokeWidth="1.2" strokeOpacity="0.65" />
                   
                   {/* Classy sign vertical "HOTEL" */}
                   <g transform="translate(55, 30)">
-                    <rect x="0" y="0" width="30" height="70" rx="3" fill="#FFFFFF" stroke="currentColor" strokeWidth="1.2" strokeOpacity="0.5" />
+                    <rect x="0" y="0" width="30" height="70" rx="3" fill="#FFFFFF" stroke="currentColor" strokeWidth="1.2" strokeOpacity="0.7" />
                     <text x="15" y="18" fill="currentColor" fontSize="10" fontWeight="bold" textAnchor="middle">I</text>
                     <text x="15" y="38" fill="currentColor" fontSize="10" fontWeight="bold" textAnchor="middle">H</text>
                     <text x="15" y="58" fill="currentColor" fontSize="10" fontWeight="bold" textAnchor="middle">G</text>
                   </g>
                   
                   {/* Windows */}
-                  <rect x="25" y="115" width="18" height="18" rx="1.5" fill="#FEF08A" fillOpacity="0.85" />
-                  <rect x="97" y="115" width="18" height="18" rx="1.5" fill="#FFFFFF" />
-                  <rect x="25" y="150" width="18" height="18" rx="1.5" fill="#FFFFFF" />
-                  <rect x="97" y="150" width="18" height="18" rx="1.5" fill="#FEF08A" fillOpacity="0.7" />
+                  <rect x="25" y="115" width="18" height="18" rx="1.5" fill="#FEF08A" fillOpacity="0.9" stroke="currentColor" strokeWidth="1" strokeOpacity="0.45" />
+                  <rect x="97" y="115" width="18" height="18" rx="1.5" fill="#FFFFFF" stroke="currentColor" strokeWidth="1" strokeOpacity="0.45" />
+                  <rect x="25" y="150" width="18" height="18" rx="1.5" fill="#FFFFFF" stroke="currentColor" strokeWidth="1" strokeOpacity="0.45" />
+                  <rect x="97" y="150" width="18" height="18" rx="1.5" fill="#FEF08A" fillOpacity="0.8" stroke="currentColor" strokeWidth="1" strokeOpacity="0.45" />
                 </svg>
               </div>
 
@@ -1116,14 +1116,14 @@ export const PremiumTransitions: React.FC<PremiumTransitionsProps> = ({
                 className="absolute left-[30%] z-0" 
                 style={{ bottom: 'calc(50% - 69px)' }}
               >
-                <svg viewBox="0 0 60 180" className="w-[50px] h-[150px] text-neutral-800 pointer-events-none drop-shadow-[0_2px_4px_rgba(0,0,0,0.06)]">
-                  <rect x="28" y="25" width="4" height="155" fill="currentColor" fillOpacity="0.6" />
+                <svg viewBox="0 0 60 180" className="w-[50px] h-[150px] text-[#3A1B58] pointer-events-none drop-shadow-[0_2px_4px_rgba(0,0,0,0.06)]">
+                  <rect x="28" y="25" width="4" height="155" fill="currentColor" fillOpacity="0.75" />
                   <rect x="24" y="175" width="12" height="5" fill="currentColor" />
-                  <path d="M 30 35 Q 15 25 15 45" fill="none" stroke="currentColor" strokeWidth="3" strokeOpacity="0.7" />
-                  <polygon points="10,45 20,45 23,38 7,38" fill="currentColor" fillOpacity="0.85" />
+                  <path d="M 30 35 Q 15 25 15 45" fill="none" stroke="currentColor" strokeWidth="3" strokeOpacity="0.8" />
+                  <polygon points="10,45 20,45 23,38 7,38" fill="currentColor" fillOpacity="0.9" />
                   <polygon points="11,45 19,45 17,55 13,55" fill="#FEF08A" />
                   <path d="M 6 38 L 24 38 L 15 32 Z" fill="currentColor" />
-                  <polygon points="15,55 -30,180 60,180" fill="#FEF08A" opacity="0.1" />
+                  <polygon points="15,55 -30,180 60,180" fill="#FEF08A" opacity="0.32" />
                 </svg>
               </div>
 
@@ -1132,23 +1132,23 @@ export const PremiumTransitions: React.FC<PremiumTransitionsProps> = ({
                 className="absolute right-[8%] z-0" 
                 style={{ bottom: 'calc(50% - 69px)' }}
               >
-                <svg viewBox="0 0 160 240" className="w-[145px] h-[218px] text-neutral-800 pointer-events-none drop-shadow-[0_2px_8px_rgba(0,0,0,0.08)]">
+                <svg viewBox="0 0 160 240" className="w-[145px] h-[218px] text-[#3A1B58] pointer-events-none drop-shadow-[0_2px_8px_rgba(0,0,0,0.08)]">
                   {/* Building body */}
-                  <rect x="10" y="30" width="140" height="210" rx="3" fill="rgba(0, 0, 0, 0.02)" stroke="currentColor" strokeWidth="2" strokeOpacity="0.4" />
+                  <rect x="10" y="30" width="140" height="210" rx="3" fill="rgba(58, 27, 88, 0.03)" stroke="currentColor" strokeWidth="2" strokeOpacity="0.75" />
                   {/* Roof classic cornice */}
-                  <rect x="5" y="20" width="150" height="10" rx="1.5" fill="rgba(0, 0, 0, 0.08)" stroke="currentColor" strokeWidth="1.5" strokeOpacity="0.4" />
+                  <rect x="5" y="20" width="150" height="10" rx="1.5" fill="rgba(58, 27, 88, 0.1)" stroke="currentColor" strokeWidth="1.5" strokeOpacity="0.75" />
                   
                   {/* Elegant Entry Canopy */}
-                  <path d="M 40 200 L 120 200 L 125 212 L 35 212 Z" fill="currentColor" fillOpacity="0.1" stroke="currentColor" strokeWidth="1" strokeOpacity="0.6" />
+                  <path d="M 40 200 L 120 200 L 125 212 L 35 212 Z" fill="currentColor" fillOpacity="0.1" stroke="currentColor" strokeWidth="1" strokeOpacity="0.7" />
                   {/* Lit entrance doorway */}
-                  <path d="M 60 212 H 100 V 240 H 60 Z" fill="#FEF08A" fillOpacity="0.95" />
+                  <path d="M 60 212 H 100 V 240 H 60 Z" fill="#FEF08A" fillOpacity="0.95" stroke="currentColor" strokeWidth="1" strokeOpacity="0.4" />
                   {/* Arched line above entrance */}
-                  <path d="M 55 200 Q 80 185 105 200" fill="none" stroke="currentColor" strokeWidth="2.5" strokeOpacity="0.5" />
+                  <path d="M 55 200 Q 80 185 105 200" fill="none" stroke="currentColor" strokeWidth="2.5" strokeOpacity="0.7" />
                   
                   {/* Glowing "HOTEL" sign */}
                   <g transform="translate(45, 45)">
                     {/* Sign board */}
-                    <rect x="0" y="0" width="70" height="24" rx="4" fill="#FFFFFF" stroke="currentColor" strokeWidth="1.5" strokeOpacity="0.6" />
+                    <rect x="0" y="0" width="70" height="24" rx="4" fill="#FFFFFF" stroke="currentColor" strokeWidth="1.5" strokeOpacity="0.8" />
                     <text x="35" y="16" fill="currentColor" fontSize="9" fontFamily="sans-serif" fontWeight="900" textAnchor="middle" letterSpacing="1">
                       HOTEL
                     </text>
@@ -1156,21 +1156,21 @@ export const PremiumTransitions: React.FC<PremiumTransitionsProps> = ({
 
                   {/* Cozy Windows */}
                   {/* Row 1 */}
-                  <rect x="25" y="85" width="22" height="26" rx="2" fill="#FEF08A" fillOpacity="0.9" />
-                  <rect x="69" y="85" width="22" height="26" rx="2" fill="#FFFFFF" stroke="currentColor" strokeWidth="1" strokeOpacity="0.2" />
-                  <rect x="113" y="85" width="22" height="26" rx="2" fill="#FEF08A" fillOpacity="0.8" />
+                  <rect x="25" y="85" width="22" height="26" rx="2" fill="#FEF08A" fillOpacity="0.9" stroke="currentColor" strokeWidth="1" strokeOpacity="0.45" />
+                  <rect x="69" y="85" width="22" height="26" rx="2" fill="#FFFFFF" stroke="currentColor" strokeWidth="1" strokeOpacity="0.45" />
+                  <rect x="113" y="85" width="22" height="26" rx="2" fill="#FEF08A" fillOpacity="0.8" stroke="currentColor" strokeWidth="1" strokeOpacity="0.45" />
                   
                   {/* Row 2 */}
-                  <rect x="25" y="125" width="22" height="26" rx="2" fill="#FFFFFF" stroke="currentColor" strokeWidth="1" strokeOpacity="0.2" />
-                  <rect x="69" y="125" width="22" height="26" rx="2" fill="#FEF08A" fillOpacity="0.95" />
-                  <rect x="113" y="125" width="22" height="26" rx="2" fill="#FFFFFF" stroke="currentColor" strokeWidth="1" strokeOpacity="0.2" />
+                  <rect x="25" y="125" width="22" height="26" rx="2" fill="#FFFFFF" stroke="currentColor" strokeWidth="1" strokeOpacity="0.45" />
+                  <rect x="69" y="125" width="22" height="26" rx="2" fill="#FEF08A" fillOpacity="0.95" stroke="currentColor" strokeWidth="1" strokeOpacity="0.45" />
+                  <rect x="113" y="125" width="22" height="26" rx="2" fill="#FFFFFF" stroke="currentColor" strokeWidth="1" strokeOpacity="0.45" />
 
                   {/* Row 3 */}
-                  <rect x="25" y="165" width="22" height="22" rx="1.5" fill="#FEF08A" fillOpacity="0.8" />
-                  <rect x="113" y="165" width="22" height="22" rx="1.5" fill="#FEF08A" fillOpacity="0.9" />
+                  <rect x="25" y="165" width="22" height="22" rx="1.5" fill="#FEF08A" fillOpacity="0.8" stroke="currentColor" strokeWidth="1" strokeOpacity="0.45" />
+                  <rect x="113" y="165" width="22" height="22" rx="1.5" fill="#FEF08A" fillOpacity="0.9" stroke="currentColor" strokeWidth="1" strokeOpacity="0.45" />
                   
-                  <line x1="15" y1="55" x2="30" y2="55" stroke="currentColor" opacity="0.1" />
-                  <line x1="130" y1="115" x2="145" y2="115" stroke="currentColor" opacity="0.1" />
+                  <line x1="15" y1="55" x2="30" y2="55" stroke="currentColor" opacity="0.2" />
+                  <line x1="130" y1="115" x2="145" y2="115" stroke="currentColor" opacity="0.2" />
                 </svg>
               </div>
 
@@ -1179,14 +1179,14 @@ export const PremiumTransitions: React.FC<PremiumTransitionsProps> = ({
                 className="absolute right-[28%] z-0" 
                 style={{ bottom: 'calc(50% - 69px)' }}
               >
-                <svg viewBox="0 0 60 180" className="w-[50px] h-[150px] text-neutral-800 pointer-events-none drop-shadow-[0_2px_4px_rgba(0,0,0,0.06)]">
-                  <rect x="28" y="25" width="4" height="155" fill="currentColor" fillOpacity="0.6" />
+                <svg viewBox="0 0 60 180" className="w-[50px] h-[150px] text-[#3A1B58] pointer-events-none drop-shadow-[0_2px_4px_rgba(0,0,0,0.06)]">
+                  <rect x="28" y="25" width="4" height="155" fill="currentColor" fillOpacity="0.75" />
                   <rect x="24" y="175" width="12" height="5" fill="currentColor" />
-                  <path d="M 30 35 Q 15 25 15 45" fill="none" stroke="currentColor" strokeWidth="3" strokeOpacity="0.7" />
-                  <polygon points="10,45 20,45 23,38 7,38" fill="currentColor" fillOpacity="0.85" />
+                  <path d="M 30 35 Q 15 25 15 45" fill="none" stroke="currentColor" strokeWidth="3" strokeOpacity="0.8" />
+                  <polygon points="10,45 20,45 23,38 7,38" fill="currentColor" fillOpacity="0.9" />
                   <polygon points="11,45 19,45 17,55 13,55" fill="#FEF08A" />
                   <path d="M 6 38 L 24 38 L 15 32 Z" fill="currentColor" />
-                  <polygon points="15,55 -30,180 60,180" fill="#FEF08A" opacity="0.1" />
+                  <polygon points="15,55 -30,180 60,180" fill="#FEF08A" opacity="0.32" />
                 </svg>
               </div>
 
@@ -1277,7 +1277,7 @@ export const PremiumTransitions: React.FC<PremiumTransitionsProps> = ({
            <motion.div
              animate={{ x: [0, -1000] }}
              transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-             className="absolute top-10 flex gap-40 text-neutral-200 whitespace-nowrap"
+             className="absolute top-10 flex gap-40 text-[#3A1B58]/22 whitespace-nowrap"
            >
              {[...Array(5)].map((_, i) => (
                 <svg key={`c-${i}`} viewBox="0 0 120 80" fill="currentColor" className="w-24 h-12 ml-48">
@@ -1291,7 +1291,7 @@ export const PremiumTransitions: React.FC<PremiumTransitionsProps> = ({
         <div className="absolute inset-0 flex items-center justify-center z-10">
             
             {/* Airport Moving Walkway */}
-            <div className="absolute top-1/2 translate-y-[52px] w-[120vw] h-[12px] bg-[#FFFFFF] border-y border-neutral-300 flex overflow-hidden shadow-sm z-10">
+            <div className="absolute top-1/2 translate-y-[52px] w-[120vw] h-[12px] bg-[#FFFFFF] border-y border-[#3A1B58]/40 flex overflow-hidden shadow-sm z-10">
                {/* Moving belt pattern */}
                <motion.div
                   animate={{ x: [0, -40] }}
@@ -1299,26 +1299,26 @@ export const PremiumTransitions: React.FC<PremiumTransitionsProps> = ({
                   className="flex h-full items-center min-w-[200vw]"
                >
                  {[...Array(120)].map((_, i) => (
-                    <div key={`belt-${i}`} className="h-[80%] w-[3px] bg-neutral-400/40 mx-[8px] rounded-full shrink-0" />
+                    <div key={`belt-${i}`} className="h-[80%] w-[3px] bg-[#3A1B58]/45 mx-[8px] rounded-full shrink-0" />
                  ))}
                </motion.div>
                {/* Glowing edge accent */}
-               <div className="absolute top-0 inset-x-0 h-[1px] bg-neutral-300" />
+               <div className="absolute top-0 inset-x-0 h-[1px] bg-[#3A1B58]/35" />
             </div>
             
             {/* Scenery moving along the ground to simulate walking */}
             <motion.div 
                animate={{ x: [400, -1200] }}
                transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
-               className="absolute bottom-1/2 translate-y-[48px] flex items-end opacity-40 z-0"
+               className="absolute bottom-1/2 translate-y-[48px] flex items-end opacity-85 z-0"
             >
                <div className="flex items-end gap-[600px]">
                   {/* Tree */}
                   <div className="w-16 h-28 mb-0 flex flex-col items-center mt-auto">
-                     <div className="w-16 h-22 rounded-full bg-[#FFFFFF] border border-neutral-300 mb-[-12px]" />
-                     <div className="w-16 h-22 rounded-full bg-[#FFFFFF] border border-neutral-300 absolute mt-4 -ml-6" />
-                     <div className="w-16 h-22 rounded-full bg-[#FFFFFF] border border-neutral-300 absolute mt-6 ml-8" />
-                     <div className="w-2 h-16 bg-neutral-300 mt-4" />
+                     <div className="w-16 h-22 rounded-full bg-[#3A1B58]/5 border border-[#3A1B58]/50 mb-[-12px]" />
+                     <div className="w-16 h-22 rounded-full bg-[#3A1B58]/5 border border-[#3A1B58]/50 absolute mt-4 -ml-6" />
+                     <div className="w-16 h-22 rounded-full bg-[#3A1B58]/5 border border-[#3A1B58]/50 absolute mt-6 ml-8" />
+                     <div className="w-2 h-16 bg-[#3A1B58]/55 mt-4" />
                   </div>
                </div>
             </motion.div>

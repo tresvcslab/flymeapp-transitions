@@ -58,23 +58,7 @@ export const AviationTransitions: React.FC<AviationTransitionsProps> = ({
             ))}
           </div>
 
-          {/* Departure Compass / Radar Motif (Bottom-Left) */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: [0, 0.35, 0.35, 0] }}
-            transition={{ duration: 4.0, times: [0, 0.15, 0.85, 1] }}
-            className="absolute bottom-20 left-16 w-16 h-16 border border-white/20 rounded-full flex items-center justify-center pointer-events-none z-0"
-          >
-            <div className="w-2 h-2 rounded-full bg-white/40 absolute" />
-            <motion.div 
-              animate={{ rotate: 360 }}
-              transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-              className="w-12 h-12 border border-dashed border-white/10 rounded-full flex items-center justify-center"
-            >
-              <div className="w-full h-[1px] bg-white/10" />
-            </motion.div>
-            <span className="absolute -bottom-4 text-[7px] font-black tracking-widest text-white/30 uppercase">DEP AP</span>
-          </motion.div>
+
 
           {/* Destination Compass Sweep (Top-Right) */}
           <motion.div

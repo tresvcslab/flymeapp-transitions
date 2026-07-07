@@ -84,10 +84,10 @@ export default function TripsScreen({ theme }: TripsScreenProps) {
 
         {/* La Familia Caminando unida sobre la cinta */}
         <div className="absolute flex items-end gap-0 bottom-1/2 translate-y-[52px] scale-[1.75] origin-bottom translate-x-2 z-20">
-          <WalkingPerson type="man" isDarkMode={isDarkMode} animDelay={0} size={70} className="z-40 drop-shadow-xl" />
-          <WalkingPerson type="woman" isDarkMode={isDarkMode} animDelay={0.2} size={70} className="-ml-3 z-30 drop-shadow-xl" />
-          <WalkingPerson type="boy" isDarkMode={isDarkMode} animDelay={0.4} size={70} className="-ml-5 z-20 drop-shadow-xl" />
-          <WalkingPerson type="girl" isDarkMode={isDarkMode} animDelay={0.6} size={70} className="-ml-5 z-10 drop-shadow-xl" />
+          <WalkingPerson type="man" isDarkMode={isDarkMode} animDelay={0} size={70} className="z-40 drop-shadow-xl" color="#F3B490" />
+          <WalkingPerson type="woman" isDarkMode={isDarkMode} animDelay={0.2} size={70} className="-ml-3 z-30 drop-shadow-xl" color="#F3B490" />
+          <WalkingPerson type="boy" isDarkMode={isDarkMode} animDelay={0.4} size={70} className="-ml-5 z-20 drop-shadow-xl" color="#F3B490" />
+          <WalkingPerson type="girl" isDarkMode={isDarkMode} animDelay={0.6} size={70} className="-ml-5 z-10 drop-shadow-xl" color="#F3B490" />
         </div>
         
         {/* Logotipo en el cielo con fallback automático si no existe logo_white_transparent.png */}

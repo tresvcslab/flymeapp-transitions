@@ -6,13 +6,19 @@ interface WaitingWomanProps {
   size?: number;
   state?: 'waiting' | 'greeting' | 'running';
   color?: string;
+  shirtColor?: string;
+  skirtColor?: string;
+  capColor?: string;
 }
 
 export const WaitingWoman: React.FC<WaitingWomanProps> = ({ 
   className = '', 
   size = 120, 
   state = 'waiting',
-  color = 'white'
+  color = 'white',
+  shirtColor,
+  skirtColor,
+  capColor
 }) => {
   const cycleDuration = 0.75;
   const easePattern = "easeInOut";
@@ -196,6 +202,14 @@ export const WaitingWoman: React.FC<WaitingWomanProps> = ({
             strokeLinejoin="round" 
           />
 
+          {/* Skirt overlay for females */}
+          {skirtColor && (
+            <path 
+              d="M 44 51 Q 35 66 37 70 L 55 70 Q 57 66 49 51 Z" 
+              fill={skirtColor} 
+            />
+          )}
+
           {/* Torso */}
           <path 
             d="M46 52 C45 44, 43 38, 47 33" 
@@ -203,6 +217,15 @@ export const WaitingWoman: React.FC<WaitingWomanProps> = ({
             strokeWidth="8" 
             strokeLinecap="round"
           />
+          {shirtColor && (
+            <path 
+              d="M46 52 C45 44, 43 38, 47 33" 
+              stroke={shirtColor} 
+              strokeWidth="8.6" 
+              strokeLinecap="round"
+              strokeDasharray="16 100"
+            />
+          )}
 
           {/* Neck */}
           <circle cx="47" cy="28.5" r="2" fill={color} />
@@ -226,6 +249,15 @@ export const WaitingWoman: React.FC<WaitingWomanProps> = ({
               d="M41 19 C31 15, 29 23, 22 23 C26 27, 30 23, 41 21"
               fill={color}
             />
+
+            {/* Cute ponytail bow */}
+            {capColor && (
+              <g transform="translate(41, 20)">
+                <circle cx="0" cy="0" r="2" fill={capColor} />
+                <path d="M-1.5 -1.5 L-4 -3 L-4 0.5 L-1.5 -0.5 Z" fill={capColor} />
+                <path d="M1.5 -1.5 L4 -3 L4 0.5 L1.5 -0.5 Z" fill={capColor} />
+              </g>
+            )}
 
             {/* Micro Details on Face (Gesto de Alegría / Rostro Amigable) */}
             {/* Happy wink/eyes, blushing and mouth */}
@@ -254,6 +286,21 @@ export const WaitingWoman: React.FC<WaitingWomanProps> = ({
             style={{ originX: "47px", originY: "33px" }}
             transition={{ duration: 0.5, repeat: Infinity }}
           />
+          {shirtColor && (
+            <motion.path 
+              d="M47 33 L35 28 L28 18" 
+              stroke={shirtColor} 
+              strokeWidth="5.5" 
+              strokeLinecap="round" 
+              strokeLinejoin="round" 
+              strokeDasharray="9 100"
+              animate={{
+                rotate: [0, -15, 15, 0]
+              }}
+              style={{ originX: "47px", originY: "33px" }}
+              transition={{ duration: 0.5, repeat: Infinity }}
+            />
+          )}
 
           {/* Front Arm - Happy waving */}
           <motion.path 
@@ -268,6 +315,21 @@ export const WaitingWoman: React.FC<WaitingWomanProps> = ({
             style={{ originX: "47px", originY: "33px" }}
             transition={{ duration: 0.5, repeat: Infinity }}
           />
+          {shirtColor && (
+            <motion.path 
+              d="M47 33 L59 26 L68 15" 
+              stroke={shirtColor} 
+              strokeWidth="6" 
+              strokeLinecap="round" 
+              strokeLinejoin="round" 
+              strokeDasharray="11 100"
+              animate={{
+                rotate: [0, 20, -20, 0]
+              }}
+              style={{ originX: "47px", originY: "33px" }}
+              transition={{ duration: 0.5, repeat: Infinity }}
+            />
+          )}
         </motion.g>
       </svg>
     );

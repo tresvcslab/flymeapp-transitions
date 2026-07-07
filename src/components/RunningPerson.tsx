@@ -6,13 +6,19 @@ interface RunningPersonProps {
   size?: number;
   state?: 'running' | 'greeting';
   color?: string;
+  shirtColor?: string;
+  pantsColor?: string;
+  capColor?: string;
 }
 
 export const RunningPerson: React.FC<RunningPersonProps> = ({ 
   className = '', 
   size = 80,
   state = 'running',
-  color = 'white'
+  color = 'white',
+  shirtColor,
+  pantsColor,
+  capColor
 }) => {
   // Speed is 0.75 seconds per full step cycle to make it feel energetic and fluid
   const cycleDuration = 0.75;
@@ -62,6 +68,29 @@ export const RunningPerson: React.FC<RunningPersonProps> = ({
             ease: easePattern
           }}
         />
+        {shirtColor && (
+          <motion.path 
+            d="M48 33 L58 35 L62 25" 
+            stroke={shirtColor} 
+            strokeWidth="5.5" 
+            strokeLinecap="round" 
+            strokeLinejoin="round" 
+            strokeDasharray="9 100"
+            animate={{
+              d: [
+                "M48 33 L59 31 L64 20", // Wave high
+                "M48 33 L58 33 L61 24", // Wave low
+                "M48 33 L59 31 L64 20"  // Wave high
+              ]
+            }}
+            transition={{
+              duration: 0.8,
+              delay: 0.1,
+              repeat: Infinity,
+              ease: easePattern
+            }}
+          />
+        )}
 
         {/* Both Legs standing, one slightly forward towards her */}
         {/* Back Leg - Straight support leg */}
@@ -71,6 +100,14 @@ export const RunningPerson: React.FC<RunningPersonProps> = ({
           strokeWidth="6" 
           strokeLinecap="round" 
         />
+        {pantsColor && (
+          <path 
+            d="M55 51 L55 64" 
+            stroke={pantsColor} 
+            strokeWidth="6.5" 
+            strokeLinecap="round" 
+          />
+        )}
         {/* Front Leg - Slightly angled forward, relaxed */}
         <motion.path 
           d="M51 51 L48 68 L46 81" 
@@ -88,6 +125,25 @@ export const RunningPerson: React.FC<RunningPersonProps> = ({
             ease: easePattern
           }}
         />
+        {pantsColor && (
+          <motion.path 
+            d="M51 51 L48 68 L46 81" 
+            stroke={pantsColor} 
+            strokeWidth="7" 
+            strokeLinecap="round" 
+            strokeLinejoin="round"
+            strokeDasharray="14 100"
+            animate={{
+              rotate: [-2, 1, -2],
+              originY: "51px"
+            }}
+            transition={{
+              duration: 1.2,
+              repeat: Infinity,
+              ease: easePattern
+            }}
+          />
+        )}
 
         {/* Torso & Hips */}
         <path 
@@ -96,6 +152,15 @@ export const RunningPerson: React.FC<RunningPersonProps> = ({
           strokeWidth="8" 
           strokeLinecap="round"
         />
+        {shirtColor && (
+          <path 
+            d="M51 51 C53 43 51 36 48 33" 
+            stroke={shirtColor} 
+            strokeWidth="8.6" 
+            strokeLinecap="round"
+            strokeDasharray="16 100"
+          />
+        )}
 
         {/* Head with bouncing dynamic movement and cute face */}
         <motion.g
@@ -112,7 +177,10 @@ export const RunningPerson: React.FC<RunningPersonProps> = ({
           <circle cx="48" cy="21" r="7.5" fill={color} />
           
           {/* Cap Peak (Sporty look) */}
-          <path d="M48 14.5 C45 14.5 40 16 38 18 C40 19.5 45 20 48 20 Z" fill={color} />
+          <path d="M48 14.5 C45 14.5 40 16 38 18 C40 19.5 45 20 48 20 Z" fill={capColor || color} />
+          {capColor && (
+            <path d="M41 19.5 A 7.5 7.5 0 0 1 54.5 17.5 L 48 21 Z" fill={capColor} />
+          )}
 
           {/* Happy Facing Gesto / Rostro Amigable (^^) */}
           <g transform="translate(1, 0)">
@@ -147,6 +215,28 @@ export const RunningPerson: React.FC<RunningPersonProps> = ({
             ease: easePattern
           }}
         />
+        {shirtColor && (
+          <motion.path 
+            d="M48 33 L38 35 L34 25" 
+            stroke={shirtColor} 
+            strokeWidth="6.5" 
+            strokeLinecap="round" 
+            strokeLinejoin="round" 
+            strokeDasharray="11 100"
+            animate={{
+              d: [
+                "M48 33 L37 31 L32 20", // Wave high
+                "M48 33 L38 33 L35 24", // Wave low
+                "M48 33 L37 31 L32 20"  // Wave high
+              ]
+            }}
+            transition={{
+              duration: 0.8,
+              repeat: Infinity,
+              ease: easePattern
+            }}
+          />
+        )}
       </svg>
     );
   }

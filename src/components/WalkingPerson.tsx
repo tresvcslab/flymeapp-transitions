@@ -9,6 +9,10 @@ export interface WalkingPersonProps {
   animDelay?: number;
   className?: string;
   color?: string;
+  shirtColor?: string;
+  pantsColor?: string;
+  skirtColor?: string;
+  capColor?: string;
 }
 
 export const WalkingPerson: React.FC<WalkingPersonProps> = ({
@@ -18,7 +22,11 @@ export const WalkingPerson: React.FC<WalkingPersonProps> = ({
   isPremium = false,
   animDelay = 0,
   className = '',
-  color = 'white'
+  color = 'white',
+  shirtColor,
+  pantsColor,
+  skirtColor,
+  capColor
 }) => {
   const cycleDuration = 1.4;
   const easePattern = "linear";
@@ -37,6 +45,71 @@ export const WalkingPerson: React.FC<WalkingPersonProps> = ({
   const useDarkModeSuitcase = isDarkMode || isPremium;
   const suitcaseColor = useDarkModeSuitcase ? (isFemale ? "#f472b6" : "#60a5fa") : "white";
   const suitcaseDetailColor = isPremium ? "#3A1B58" : "white";
+
+  // Assign defaults for stylish clothing colors based on context (premium, dark, or light mode)
+  let defaultShirtColor = shirtColor;
+  let defaultPantsColor = pantsColor;
+  let defaultSkirtColor = skirtColor;
+  let defaultCapColor = capColor;
+
+  if (!defaultShirtColor && !defaultPantsColor && !defaultSkirtColor && !defaultCapColor) {
+    if (isPremium) {
+      if (type === 'man') {
+        defaultShirtColor = "#4F46E5"; // Indigo
+        defaultPantsColor = "#312E81"; // Dark Indigo
+        defaultCapColor = "#4338CA";
+      } else if (type === 'woman') {
+        defaultShirtColor = "#EC4899"; // Pink
+        defaultSkirtColor = "#BE185D"; // Rose
+        defaultCapColor = "#9D174D";
+      } else if (type === 'boy') {
+        defaultShirtColor = "#10B981"; // Emerald
+        defaultPantsColor = "#065F46"; // Dark emerald
+        defaultCapColor = "#047857";
+      } else if (type === 'girl') {
+        defaultShirtColor = "#F59E0B"; // Amber
+        defaultSkirtColor = "#B45309"; // Dark amber
+        defaultCapColor = "#78350F";
+      }
+    } else if (isDarkMode) {
+      if (type === 'man') {
+        defaultShirtColor = "#3B82F6"; // Vibrant Blue
+        defaultPantsColor = "#60A5FA"; // Light Blue
+        defaultCapColor = "#2563EB";
+      } else if (type === 'woman') {
+        defaultShirtColor = "#EC4899"; // Vibrant Pink
+        defaultSkirtColor = "#F472B6"; // Pink
+        defaultCapColor = "#FBCFE8";
+      } else if (type === 'boy') {
+        defaultShirtColor = "#10B981"; // Vibrant Emerald
+        defaultPantsColor = "#34D399"; // Mint
+        defaultCapColor = "#059669";
+      } else if (type === 'girl') {
+        defaultShirtColor = "#F59E0B"; // Amber
+        defaultSkirtColor = "#FBBF24"; // Yellow
+        defaultCapColor = "#FDE68A";
+      }
+    } else {
+      // Light Mode (Trips purple background)
+      if (type === 'man') {
+        defaultShirtColor = "#3B82F6";
+        defaultPantsColor = "#1D4ED8";
+        defaultCapColor = "#2563EB";
+      } else if (type === 'woman') {
+        defaultShirtColor = "#F472B6";
+        defaultSkirtColor = "#EC4899";
+        defaultCapColor = "#BE185D";
+      } else if (type === 'boy') {
+        defaultShirtColor = "#10B981";
+        defaultPantsColor = "#059669";
+        defaultCapColor = "#047857";
+      } else if (type === 'girl') {
+        defaultShirtColor = "#F59E0B";
+        defaultSkirtColor = "#D97706";
+        defaultCapColor = "#B45309";
+      }
+    }
+  }
 
   const suitcaseAnim = {
     y: [0, 1.5, 0, 1.5, 0]
@@ -72,6 +145,16 @@ export const WalkingPerson: React.FC<WalkingPersonProps> = ({
          strokeLinecap="round" 
          strokeLinejoin="round"
       />
+      {defaultShirtColor && (
+        <motion.path 
+           d="M48 33 L35 44 L22 55"
+           stroke={defaultShirtColor} 
+           strokeWidth="6" 
+           strokeLinecap="round" 
+           strokeLinejoin="round"
+           strokeDasharray="9 100"
+        />
+      )}
 
       {/* Back Leg */}
       <motion.path 
@@ -90,6 +173,25 @@ export const WalkingPerson: React.FC<WalkingPersonProps> = ({
         strokeLinecap="round" 
         strokeLinejoin="round" 
       />
+      {defaultPantsColor && !isFemale && (
+        <motion.path 
+          animate={{
+            d: [
+              "M47 51 L40 68 L30 80",
+              "M47 50 L50 63 L45 75",
+              "M47 51 L55 65 L60 82",
+              "M47 50 L47 68 L48 83",
+              "M47 51 L40 68 L30 80"
+            ]
+          }}
+          transition={{ duration: cycleDuration, delay: animDelay, repeat: Infinity, ease: easePattern }}
+          stroke={defaultPantsColor} 
+          strokeWidth="7.1" 
+          strokeLinecap="round" 
+          strokeLinejoin="round" 
+          strokeDasharray="14 100"
+        />
+      )}
 
       {/* Torso */}
       <motion.path 
@@ -107,21 +209,22 @@ export const WalkingPerson: React.FC<WalkingPersonProps> = ({
         strokeWidth="8" 
         strokeLinecap="round"
       />
-
-      {/* Dress/Skirt for females */}
-      {isFemale && (
+      {defaultShirtColor && (
         <motion.path 
           animate={{
             d: [
-              "M 44 45 Q 36 60 38 64 L 56 64 Q 58 60 50 45 Z",
-              "M 44 44 Q 35 59 37 62 L 58 62 Q 59 59 50 44 Z",
-              "M 44 45 Q 36 60 38 64 L 56 64 Q 58 60 50 45 Z",
-              "M 44 44 Q 35 59 37 62 L 58 62 Q 59 59 50 44 Z",
-              "M 44 45 Q 36 60 38 64 L 56 64 Q 58 60 50 45 Z"
+              "M47 51 C45 43 46 36 49 33", 
+              "M47 50 C45 42 46 35 49 32", 
+              "M47 51 C45 43 46 36 49 33",
+              "M47 50 C45 42 46 35 49 32",
+              "M47 51 C45 43 46 36 49 33"
             ]
           }}
           transition={{ duration: cycleDuration, delay: animDelay, repeat: Infinity, ease: easePattern }}
-          fill={color}
+          stroke={defaultShirtColor} 
+          strokeWidth="8.6" 
+          strokeLinecap="round"
+          strokeDasharray="16 100"
         />
       )}
 
@@ -138,12 +241,30 @@ export const WalkingPerson: React.FC<WalkingPersonProps> = ({
            <>
              {/* Hair bun and ponytail */}
              <circle cx="42" cy="18" r="3.5" fill={color} />
+             {defaultCapColor && (
+               <g transform="translate(42, 18)">
+                 <circle cx="0" cy="0" r="4.2" fill={defaultCapColor} />
+               </g>
+             )}
              <path d="M 43 20 Q 36 28 39 36" stroke={color} strokeWidth="4.5" fill="none" strokeLinecap="round" />
+             {defaultCapColor && (
+               <path d="M 43 20 Q 36 28 39 36" stroke={defaultCapColor} strokeWidth="4.9" strokeLinecap="round" strokeDasharray="6 100" fill="none" />
+             )}
            </>
         ) : type === 'boy' ? (
-           <path d="M49 14.5 C45 14.5 40 16 38 18 C40 19.5 45 20 49 20 Z" fill={color} />
+           <>
+             <path d="M49 14.5 C45 14.5 40 16 38 18 C40 19.5 45 20 49 20 Z" fill={defaultCapColor || color} />
+             {defaultCapColor && (
+               <path d="M41 19.5 A 7.5 7.5 0 0 1 54.5 17.5 L 49 21 Z" fill={defaultCapColor} />
+             )}
+           </>
         ) : (
-           <path d="M46 15.5 C 48 14 52 14 55 16" stroke={color} strokeWidth="2.5" strokeLinecap="round" fill="none" />
+           <>
+             <path d="M46 15.5 C 48 14 52 14 55 16" stroke={color} strokeWidth="2.5" strokeLinecap="round" fill="none" />
+             {defaultCapColor && (
+               <path d="M46 15.5 C 48 14 52 14 55 16" stroke={defaultCapColor} strokeWidth="3" strokeLinecap="round" fill="none" />
+             )}
+           </>
         )}
 
         {/* Happy Face */}
@@ -173,6 +294,42 @@ export const WalkingPerson: React.FC<WalkingPersonProps> = ({
         strokeLinecap="round" 
         strokeLinejoin="round" 
       />
+      {defaultPantsColor && !isFemale && (
+        <motion.path 
+          animate={{
+            d: [
+              "M47 51 L55 65 L60 82",
+              "M47 50 L47 68 L48 83",
+              "M47 51 L40 68 L30 80",
+              "M47 50 L50 63 L45 75",
+              "M47 51 L55 65 L60 82"
+            ]
+          }}
+          transition={{ duration: cycleDuration, delay: animDelay, repeat: Infinity, ease: easePattern }}
+          stroke={defaultPantsColor} 
+          strokeWidth="7.1" 
+          strokeLinecap="round" 
+          strokeLinejoin="round" 
+          strokeDasharray="14 100"
+        />
+      )}
+
+      {/* Dress/Skirt for females */}
+      {isFemale && (
+        <motion.path 
+          animate={{
+            d: [
+              "M 44 45 Q 36 60 38 64 L 56 64 Q 58 60 50 45 Z",
+              "M 44 44 Q 35 59 37 62 L 58 62 Q 59 59 50 44 Z",
+              "M 44 45 Q 36 60 38 64 L 56 64 Q 58 60 50 45 Z",
+              "M 44 44 Q 35 59 37 62 L 58 62 Q 59 59 50 44 Z",
+              "M 44 45 Q 36 60 38 64 L 56 64 Q 58 60 50 45 Z"
+            ]
+          }}
+          transition={{ duration: cycleDuration, delay: animDelay, repeat: Infinity, ease: easePattern }}
+          fill={defaultSkirtColor || color}
+        />
+      )}
 
       {/* Front Arm */}
       <motion.path 
@@ -191,6 +348,25 @@ export const WalkingPerson: React.FC<WalkingPersonProps> = ({
         strokeLinecap="round" 
         strokeLinejoin="round" 
       />
+      {defaultShirtColor && (
+        <motion.path 
+          animate={{
+            d: [
+              "M49 33 L40 43 L32 46",
+              "M49 32 L47 43 L45 52",
+              "M49 33 L55 42 L60 48",
+              "M49 32 L47 43 L45 52",
+              "M49 33 L40 43 L32 46"
+            ]
+          }}
+          transition={{ duration: cycleDuration, delay: animDelay, repeat: Infinity, ease: easePattern }}
+          stroke={defaultShirtColor} 
+          strokeWidth="6" 
+          strokeLinecap="round" 
+          strokeLinejoin="round" 
+          strokeDasharray="9 100"
+        />
+      )}
 
       {/* Girl's Balloon */}
       {type === 'girl' && (

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 interface LogoProps {
   className?: string;
@@ -7,43 +7,15 @@ interface LogoProps {
 }
 
 export const Logo: React.FC<LogoProps> = ({ className = '', size = 'md', isPremium = false }) => {
-  const [hasError, setHasError] = useState(false);
-
-  const sizeClasses = {
-    sm: 'text-lg leading-tight',
-    md: 'text-2xl leading-tight',
-    lg: 'text-4xl leading-tight',
-  };
-
-  if (!hasError) {
-    const logoHeight = size === 'sm' ? 'h-8' : size === 'md' ? 'h-14' : 'h-20';
-    return (
-      <div className={`flex justify-center items-center select-none z-30 ${className}`}>
-        <img
-          src={isPremium ? "/logo_black_transparent.png" : "/logo_white_transparent.png"}
-          alt="Logo"
-          className={`${logoHeight} w-auto object-contain drop-shadow-md ${isPremium ? 'brightness-0' : ''}`}
-          onError={() => setHasError(true)}
-        />
-      </div>
-    );
-  }
+  const logoHeight = size === 'sm' ? 'h-8' : size === 'md' ? 'h-14' : 'h-20';
 
   return (
-    <div className={`font-black tracking-tighter flex flex-col items-center select-none ${isPremium ? 'text-black' : 'text-white'} ${sizeClasses[size]} ${className}`}>
-      <div className="flex items-baseline">
-        <span>FL</span>
-        <span className="ml-[-1px]">¥</span>
-      </div>
-      <div className="flex items-baseline mt-[-4px]">
-        <span>M</span>
-        <span className="ml-[-1px]">€</span>
-      </div>
-      <div className="flex items-baseline mt-[-4px]">
-        <span>CA</span>
-        <span className="ml-[-1px]">$</span>
-        <span>H</span>
-      </div>
+    <div className={`flex justify-center items-center select-none z-30 ${className}`}>
+      <img
+        src={isPremium ? "/logo_black_transparent.png" : "/logo_white_transparent.png"}
+        alt="Logo"
+        className={`${logoHeight} w-auto object-contain drop-shadow-md`}
+      />
     </div>
   );
 };

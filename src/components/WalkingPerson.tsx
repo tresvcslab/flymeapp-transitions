@@ -192,6 +192,25 @@ export const WalkingPerson: React.FC<WalkingPersonProps> = ({
           strokeDasharray="14 100"
         />
       )}
+      {isFemale && (
+        <motion.path 
+          animate={{
+            d: [
+              "M47 51 L40 68 L30 80",
+              "M47 50 L50 63 L45 75",
+              "M47 51 L55 65 L60 82",
+              "M47 50 L47 68 L48 83",
+              "M47 51 L40 68 L30 80"
+            ]
+          }}
+          transition={{ duration: cycleDuration, delay: animDelay, repeat: Infinity, ease: easePattern }}
+          stroke={defaultSkirtColor || color} 
+          strokeWidth="7.1" 
+          strokeLinecap="round" 
+          strokeLinejoin="round" 
+          strokeDasharray="16 100"
+        />
+      )}
 
       {/* Torso */}
       <motion.path 
@@ -313,17 +332,36 @@ export const WalkingPerson: React.FC<WalkingPersonProps> = ({
           strokeDasharray="14 100"
         />
       )}
+      {isFemale && (
+        <motion.path 
+          animate={{
+            d: [
+              "M47 51 L55 65 L60 82",
+              "M47 50 L47 68 L48 83",
+              "M47 51 L40 68 L30 80",
+              "M47 50 L50 63 L45 75",
+              "M47 51 L55 65 L60 82"
+            ]
+          }}
+          transition={{ duration: cycleDuration, delay: animDelay, repeat: Infinity, ease: easePattern }}
+          stroke={defaultSkirtColor || color} 
+          strokeWidth="7.1" 
+          strokeLinecap="round" 
+          strokeLinejoin="round" 
+          strokeDasharray="16 100"
+        />
+      )}
 
       {/* Dress/Skirt for females */}
       {isFemale && (
         <motion.path 
           animate={{
             d: [
-              "M 44 45 Q 36 60 38 64 L 56 64 Q 58 60 50 45 Z",
-              "M 44 44 Q 35 59 37 62 L 58 62 Q 59 59 50 44 Z",
-              "M 44 45 Q 36 60 38 64 L 56 64 Q 58 60 50 45 Z",
-              "M 44 44 Q 35 59 37 62 L 58 62 Q 59 59 50 44 Z",
-              "M 44 45 Q 36 60 38 64 L 56 64 Q 58 60 50 45 Z"
+              "M 44 45 Q 33 60 35 64 L 59 64 Q 61 60 50 45 Z",
+              "M 44 44 Q 32 59 34 62 L 61 62 Q 62 59 50 44 Z",
+              "M 44 45 Q 33 60 35 64 L 59 64 Q 61 60 50 45 Z",
+              "M 44 44 Q 32 59 34 62 L 61 62 Q 62 59 50 44 Z",
+              "M 44 45 Q 33 60 35 64 L 59 64 Q 61 60 50 45 Z"
             ]
           }}
           transition={{ duration: cycleDuration, delay: animDelay, repeat: Infinity, ease: easePattern }}

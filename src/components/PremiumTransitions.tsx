@@ -1245,6 +1245,9 @@ export const PremiumTransitions: React.FC<PremiumTransitionsProps> = ({
                 size={120} 
                 state={hotelAnimState === 'greeting' ? 'greeting' : 'running'} 
                 color="#F3B490"
+                shirtColor="#3B82F6" 
+                pantsColor="#1D4ED8" 
+                capColor="#1E3A8A" 
               />
             </motion.div>
 
@@ -1266,6 +1269,9 @@ export const PremiumTransitions: React.FC<PremiumTransitionsProps> = ({
                 size={120} 
                 state={hotelAnimState} 
                 color="#F3B490"
+                shirtColor="#F472B6" 
+                skirtColor="#E11D48" 
+                capColor="#BE185D" 
               />
             </motion.div>
           </div>

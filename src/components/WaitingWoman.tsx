@@ -55,6 +55,16 @@ export const WaitingWoman: React.FC<WaitingWomanProps> = ({
           strokeLinecap="round" 
           strokeLinejoin="round" 
         />
+        {shirtColor && (
+          <path 
+            d="M48 33 L42 45 L40 54" 
+            stroke={shirtColor} 
+            strokeWidth="5.5" 
+            strokeLinecap="round" 
+            strokeLinejoin="round" 
+            strokeDasharray="9 100"
+          />
+        )}
 
         {/* Both Legs standing elegantly, one slightly bent/resting */}
         {/* Back Leg - Standing straight */}
@@ -82,6 +92,14 @@ export const WaitingWoman: React.FC<WaitingWomanProps> = ({
           }}
         />
 
+        {/* Skirt overlay for females */}
+        {skirtColor && (
+          <path 
+            d="M 44 51 Q 35 66 37 70 L 55 70 Q 57 66 49 51 Z" 
+            fill={skirtColor} 
+          />
+        )}
+
         {/* Torso - Beautiful curved feminine posture */}
         <path 
           d="M48 52 C46 44, 44 38, 48 33" 
@@ -89,6 +107,15 @@ export const WaitingWoman: React.FC<WaitingWomanProps> = ({
           strokeWidth="8" 
           strokeLinecap="round"
         />
+        {shirtColor && (
+          <path 
+            d="M48 52 C46 44, 44 38, 48 33" 
+            stroke={shirtColor} 
+            strokeWidth="8.6" 
+            strokeLinecap="round"
+            strokeDasharray="16 100"
+          />
+        )}
 
         {/* Slender neck connection */}
         <circle cx="48" cy="28.5" r="2" fill={color} />
@@ -121,6 +148,15 @@ export const WaitingWoman: React.FC<WaitingWomanProps> = ({
               ease: "easeInOut"
             }}
           />
+
+          {/* Cute ponytail bow */}
+          {capColor && (
+            <g transform="translate(42, 19)">
+              <circle cx="0" cy="0" r="2" fill={capColor} />
+              <path d="M-1.5 -1.5 L-4 -3 L-4 0.5 L-1.5 -0.5 Z" fill={capColor} />
+              <path d="M1.5 -1.5 L4 -3 L4 0.5 L1.5 -0.5 Z" fill={capColor} />
+            </g>
+          )}
         </motion.g>
 
         {/* Front Arm - Raising to do a warm, gentle wave to the left (waiting for him) */}
@@ -143,6 +179,28 @@ export const WaitingWoman: React.FC<WaitingWomanProps> = ({
             ease: easePattern
           }}
         />
+        {shirtColor && (
+          <motion.path 
+            d="M48 33 L58 35 L62 25" 
+            stroke={shirtColor} 
+            strokeWidth="6" 
+            strokeLinecap="round" 
+            strokeLinejoin="round" 
+            strokeDasharray="9 100"
+            animate={{
+              d: [
+                "M48 33 L58 32 L64 21",
+                "M48 33 L57 34 L61 24",
+                "M48 33 L58 32 L64 21"
+              ]
+            }}
+            transition={{
+              duration: 1,
+              repeat: Infinity,
+              ease: easePattern
+            }}
+          />
+        )}
       </svg>
     );
   }
@@ -366,6 +424,29 @@ export const WaitingWoman: React.FC<WaitingWomanProps> = ({
         strokeLinecap="round" 
         strokeLinejoin="round" 
       />
+      {shirtColor && (
+        <motion.path 
+          animate={{
+            d: [
+              "M47 33 L38 43 L30 47",
+              "M47 33 L45 45 L41 51",
+              "M47 33 L55 43 L51 51",
+              "M47 33 L53 46 L58 53",
+              "M47 33 L38 43 L30 47"
+            ]
+          }}
+          transition={{
+            duration: cycleDuration,
+            repeat: Infinity,
+            ease: easePattern
+          }}
+          stroke={shirtColor} 
+          strokeWidth="6" 
+          strokeLinecap="round" 
+          strokeLinejoin="round" 
+          strokeDasharray="9 100"
+        />
+      )}
 
       {/* Back Leg (Slender leg paths, beautifully responsive) */}
       <motion.path 
@@ -389,6 +470,27 @@ export const WaitingWoman: React.FC<WaitingWomanProps> = ({
         strokeLinejoin="round" 
       />
 
+      {/* Skirt overlay for females */}
+      {skirtColor && (
+        <motion.path
+          animate={{
+            d: [
+              "M 39 52 Q 33 64 36 67 L 51 67 Q 53 64 47 52 Z", // Frame 1
+              "M 39 50 Q 33 62 36 65 L 51 65 Q 53 62 47 50 Z", // Frame 2
+              "M 39 52 Q 33 64 36 67 L 51 67 Q 53 64 47 52 Z", // Frame 3
+              "M 39 50 Q 33 62 36 65 L 51 65 Q 53 62 47 50 Z", // Frame 4
+              "M 39 52 Q 33 64 36 67 L 51 67 Q 53 64 47 52 Z"  // Frame 5
+            ]
+          }}
+          transition={{
+            duration: cycleDuration,
+            repeat: Infinity,
+            ease: easePattern
+          }}
+          fill={skirtColor}
+        />
+      )}
+
       {/* Torso - Curved waist silhouette */}
       <motion.path 
         animate={{
@@ -409,6 +511,28 @@ export const WaitingWoman: React.FC<WaitingWomanProps> = ({
         strokeWidth="8" 
         strokeLinecap="round"
       />
+      {shirtColor && (
+        <motion.path 
+          animate={{
+            d: [
+              "M43 52 C41 44 43 37 47 33",
+              "M43 50 C41 42 43 35 47 31",
+              "M43 52 C41 44 43 37 47 33",
+              "M43 50 C41 42 43 35 47 31",
+              "M43 52 C41 44 43 37 47 33"
+            ]
+          }}
+          transition={{
+            duration: cycleDuration,
+            repeat: Infinity,
+            ease: easePattern
+          }}
+          stroke={shirtColor} 
+          strokeWidth="8.6" 
+          strokeLinecap="round"
+          strokeDasharray="16 100"
+        />
+      )}
 
       {/* Neck */}
       <motion.circle 
@@ -451,6 +575,15 @@ export const WaitingWoman: React.FC<WaitingWomanProps> = ({
           }}
           fill={color}
         />
+
+        {/* Cute ponytail bow */}
+        {capColor && (
+          <g transform="translate(45, 19)">
+            <circle cx="0" cy="0" r="2" fill={capColor} />
+            <path d="M-1.5 -1.5 L-4 -3 L-4 0.5 L-1.5 -0.5 Z" fill={capColor} />
+            <path d="M1.5 -1.5 L4 -3 L4 0.5 L1.5 -0.5 Z" fill={capColor} />
+          </g>
+        )}
 
         {/* Micro face details - Sweet smiling side profile */}
         <path d="M 54.5 19.5 C 55 19.5 56.5 20.3 56.5 21 C 56.5 21.7 55 22.5 54.5 22.5" stroke="#1d1145" strokeWidth="1" strokeLinecap="round" fill="none" />
@@ -500,6 +633,29 @@ export const WaitingWoman: React.FC<WaitingWomanProps> = ({
         strokeLinecap="round" 
         strokeLinejoin="round" 
       />
+      {shirtColor && (
+        <motion.path 
+          animate={{
+            d: [
+              "M47 33 L55 43 L51 51",
+              "M47 33 L53 46 L58 53",
+              "M47 33 L38 43 L30 47",
+              "M47 33 L45 45 L41 51",
+              "M47 33 L55 43 L51 51"
+            ]
+          }}
+          transition={{
+            duration: cycleDuration,
+            repeat: Infinity,
+            ease: easePattern
+          }}
+          stroke={shirtColor} 
+          strokeWidth="6" 
+          strokeLinecap="round" 
+          strokeLinejoin="round" 
+          strokeDasharray="9 100"
+        />
+      )}
     </svg>
   );
 };

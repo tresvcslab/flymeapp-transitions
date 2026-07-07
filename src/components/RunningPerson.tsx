@@ -272,6 +272,29 @@ export const RunningPerson: React.FC<RunningPersonProps> = ({
         strokeLinecap="round" 
         strokeLinejoin="round" 
       />
+      {shirtColor && (
+        <motion.path 
+          animate={{
+            d: [
+              "M47 33 L38 41 L28 45",
+              "M47 33 L45 44 L40 50",
+              "M47 33 L55 42 L52 50",
+              "M47 33 L53 45 L58 52",
+              "M47 33 L38 41 L28 45"
+            ]
+          }}
+          transition={{
+            duration: cycleDuration,
+            repeat: Infinity,
+            ease: easePattern
+          }}
+          stroke={shirtColor} 
+          strokeWidth="6.5" 
+          strokeLinecap="round" 
+          strokeLinejoin="round" 
+          strokeDasharray="9 100"
+        />
+      )}
 
       {/* Back Leg (Slightly translucent for depth) */}
       <motion.path 
@@ -294,6 +317,29 @@ export const RunningPerson: React.FC<RunningPersonProps> = ({
         strokeLinecap="round" 
         strokeLinejoin="round" 
       />
+      {pantsColor && (
+        <motion.path 
+          animate={{
+            d: [
+              "M44 51 L48 57 L43 71",
+              "M44 50 L56 62 L66 78",
+              "M44 51 L45 66 L42 82",
+              "M44 50 L28 62 L16 74",
+              "M44 51 L48 57 L43 71"
+            ]
+          }}
+          transition={{
+            duration: cycleDuration,
+            repeat: Infinity,
+            ease: easePattern
+          }}
+          stroke={pantsColor} 
+          strokeWidth="7.5" 
+          strokeLinecap="round" 
+          strokeLinejoin="round" 
+          strokeDasharray="14 100"
+        />
+      )}
 
       {/* Torso & Hips */}
       <motion.path 
@@ -315,6 +361,28 @@ export const RunningPerson: React.FC<RunningPersonProps> = ({
         strokeWidth="9" 
         strokeLinecap="round"
       />
+      {shirtColor && (
+        <motion.path 
+          animate={{
+            d: [
+              "M44 51 C42 43 44 36 47 33",
+              "M44 49 C42 41 44 34 47 31",
+              "M44 51 C42 43 44 36 47 33",
+              "M44 49 C42 41 44 34 47 31",
+              "M44 51 C42 43 44 36 47 33"
+            ]
+          }}
+          transition={{
+            duration: cycleDuration,
+            repeat: Infinity,
+            ease: easePattern
+          }}
+          stroke={shirtColor} 
+          strokeWidth="9.6" 
+          strokeLinecap="round"
+          strokeDasharray="17 100"
+        />
+      )}
 
       {/* Runner Head with Dynamic Bouncing, Cap Peak transitions, and Happy Face details */}
       <motion.g
@@ -348,7 +416,7 @@ export const RunningPerson: React.FC<RunningPersonProps> = ({
             repeat: Infinity,
             ease: "easeInOut"
           }}
-          fill={color}
+          fill={capColor || color}
         />
 
         {/* Back Cap Adjusting Pin-hole - Fades out when looking front */}
@@ -363,7 +431,7 @@ export const RunningPerson: React.FC<RunningPersonProps> = ({
             repeat: Infinity,
             ease: "easeInOut"
           }}
-          fill="rgba(255, 255, 255, 0.4)" 
+          fill={capColor ? "rgba(0, 0, 0, 0.15)" : "rgba(255, 255, 255, 0.4)"} 
         />
 
         {/* Gesto de alegría / Rostro amigable - Mirando al frente con ojos sonrientes, mejillas rosadas y una gran boca feliz */}
@@ -413,6 +481,29 @@ export const RunningPerson: React.FC<RunningPersonProps> = ({
         strokeLinecap="round" 
         strokeLinejoin="round" 
       />
+      {pantsColor && (
+        <motion.path 
+          animate={{
+            d: [
+              "M44 51 L45 66 L42 82",
+              "M44 50 L28 62 L16 74",
+              "M44 51 L48 57 L43 71",
+              "M44 50 L56 62 L66 78",
+              "M44 51 L45 66 L42 82"
+            ]
+          }}
+          transition={{
+            duration: cycleDuration,
+            repeat: Infinity,
+            ease: easePattern
+          }}
+          stroke={pantsColor} 
+          strokeWidth="7.5" 
+          strokeLinecap="round" 
+          strokeLinejoin="round" 
+          strokeDasharray="14 100"
+        />
+      )}
 
       {/* Front Arm */}
       <motion.path 
@@ -447,6 +538,41 @@ export const RunningPerson: React.FC<RunningPersonProps> = ({
         strokeLinecap="round" 
         strokeLinejoin="round" 
       />
+      {shirtColor && (
+        <motion.path 
+          animate={{
+            d: [
+              "M47 33 L55 42 L52 50",
+              "M47 33 L53 45 L58 52",
+              "M47 33 L45 44 L40 50",
+              "M47 33 L38 41 L28 45",
+              "M47 33 L47 38 L45 45",
+              "M47 33 L55 36 L63 32",
+              "M47 33 L56 34 L64 26",
+              "M47 33 L54 37 L61 36",
+              "M47 33 L56 34 L64 26",
+              "M47 33 L54 37 L61 36",
+              "M47 33 L56 32 L64 24",
+              "M47 33 L54 37 L61 36",
+              "M47 33 L45 44 L40 50",
+              "M47 33 L38 41 L28 45",
+              "M47 33 L55 42 L52 50",
+              "M47 33 L53 45 L58 52",
+              "M47 33 L45 44 L40 50"
+            ]
+          }}
+          transition={{
+            duration: 3,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+          stroke={shirtColor} 
+          strokeWidth="6.5" 
+          strokeLinecap="round" 
+          strokeLinejoin="round" 
+          strokeDasharray="9 100"
+        />
+      )}
     </svg>
   );
 };

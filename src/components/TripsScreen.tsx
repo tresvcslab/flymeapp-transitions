@@ -4,9 +4,10 @@ import { WalkingPerson } from './WalkingPerson';
 
 interface TripsScreenProps {
   theme: 'light' | 'dark';
+  showLogo?: boolean;
 }
 
-export default function TripsScreen({ theme }: TripsScreenProps) {
+export default function TripsScreen({ theme, showLogo = true }: TripsScreenProps) {
   const isDarkMode = theme === 'dark';
 
   return (
@@ -91,10 +92,13 @@ export default function TripsScreen({ theme }: TripsScreenProps) {
         </div>
         
         {/* Logotipo en el cielo con fallback automático si no existe logo_white_transparent.png */}
+        {showLogo && (
         <div className="absolute top-16 left-1/2 -translate-x-1/2 text-white text-center select-none z-30 min-w-[200px]">
           <img
             src="/logo_white_transparent.png"
             alt="Logo"
+            width={432}
+            height={462}
             className="h-14 w-auto object-contain mx-auto drop-shadow-md"
             onError={(e) => {
               e.currentTarget.style.display = 'none';
@@ -111,6 +115,7 @@ export default function TripsScreen({ theme }: TripsScreenProps) {
             </div>
           </div>
         </div>
+        )}
 
       </div>
     </div>

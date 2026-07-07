@@ -14,10 +14,11 @@ export default function App() {
     const themeParam = (searchParams.get('theme') as ThemeType) || 'dark';
     const isTransparentParam = searchParams.get('transparent') !== 'false'; // Defaults to transparent for overlay usage
     const isEmbedParam = searchParams.get('embed') === 'true';
-    return { sceneParam, themeParam, isTransparentParam, isEmbedParam };
+    const showLogoParam = searchParams.get('logo') !== 'false'; // Defaults to true so the web preview keeps its logo
+    return { sceneParam, themeParam, isTransparentParam, isEmbedParam, showLogoParam };
   };
 
-  const { sceneParam, themeParam, isTransparentParam, isEmbedParam } = getQueryParams();
+  const { sceneParam, themeParam, isTransparentParam, isEmbedParam, showLogoParam } = getQueryParams();
 
   const [scene, setScene] = useState<SceneType>(sceneParam);
   const [appMode, setAppMode] = useState<'light' | 'dark' | 'premium'>(
@@ -27,6 +28,7 @@ export default function App() {
   const isPremium = appMode === 'premium';
   const [isTransparent, setIsTransparent] = useState<boolean>(isTransparentParam);
   const [isEmbed, setIsEmbed] = useState<boolean>(isEmbedParam);
+  const [showLogo, setShowLogo] = useState<boolean>(showLogoParam);
   const [hotelAnimState, setHotelAnimState] = useState<'waiting' | 'greeting' | 'running'>('waiting');
 
   // Trigger countdown timers for non-splash scenes to complete automatically
@@ -67,11 +69,12 @@ export default function App() {
   // Sync state if URL changes directly
   useEffect(() => {
     const handleUrlChange = () => {
-      const { sceneParam, themeParam, isTransparentParam, isEmbedParam } = getQueryParams();
+      const { sceneParam, themeParam, isTransparentParam, isEmbedParam, showLogoParam } = getQueryParams();
       setScene(sceneParam);
       setAppMode(themeParam === 'light' ? 'light' : themeParam === 'premium' ? 'premium' : 'dark');
       setIsTransparent(isTransparentParam);
       setIsEmbed(isEmbedParam);
+      setShowLogo(showLogoParam);
     };
 
     window.addEventListener('popstate', handleUrlChange);
@@ -111,6 +114,9 @@ export default function App() {
           if (msgBuffer.embed !== undefined) {
             setIsEmbed(Boolean(msgBuffer.embed));
           }
+          if (msgBuffer.logo !== undefined) {
+            setShowLogo(msgBuffer.logo !== false && msgBuffer.logo !== 'false');
+          }
         }
       } catch (err) {
         console.error('Failed to parse incoming postMessage data from host:', err);
@@ -149,7 +155,7 @@ export default function App() {
     if (isPremium) {
       switch (scene) {
         case 'splash':
-          return <SplashScreen onAnimationComplete={handleAnimationComplete} />;
+          return <SplashScreen onAnimationComplete={handleAnimationComplete} showLogo={showLogo} />;
         case 'flights':
           return (
             <PremiumTransitions 
@@ -159,6 +165,7 @@ export default function App() {
               isAnimatingTrips={false}
               hotelAnimState="waiting"
               isDarkMode={isDark}
+              showLogo={showLogo}
             />
           );
         case 'hotels':
@@ -170,6 +177,7 @@ export default function App() {
               isAnimatingTrips={false}
               hotelAnimState={hotelAnimState}
               isDarkMode={isDark}
+              showLogo={showLogo}
             />
           );
         case 'cars':
@@ -181,6 +189,7 @@ export default function App() {
               isAnimatingTrips={false}
               hotelAnimState="greeting"
               isDarkMode={isDark}
+              showLogo={showLogo}
             />
           );
         case 'trips':
@@ -192,16 +201,17 @@ export default function App() {
               isAnimatingTrips={true}
               hotelAnimState="waiting"
               isDarkMode={isDark}
+              showLogo={showLogo}
             />
           );
         default:
-          return <SplashScreen onAnimationComplete={handleAnimationComplete} />;
+          return <SplashScreen onAnimationComplete={handleAnimationComplete} showLogo={showLogo} />;
       }
     }
 
     switch (scene) {
       case 'splash':
-        return <SplashScreen onAnimationComplete={handleAnimationComplete} />;
+        return <SplashScreen onAnimationComplete={handleAnimationComplete} showLogo={showLogo} />;
       case 'flights':
         return (
           <AviationTransitions 
@@ -233,9 +243,9 @@ export default function App() {
           />
         );
       case 'trips':
-        return <TripsScreen theme={theme} />;
+        return <TripsScreen theme={theme} showLogo={showLogo} />;
       default:
-        return <SplashScreen onAnimationComplete={handleAnimationComplete} />;
+        return <SplashScreen onAnimationComplete={handleAnimationComplete} showLogo={showLogo} />;
     }
   };
 

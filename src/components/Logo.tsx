@@ -14,6 +14,8 @@ export const Logo: React.FC<LogoProps> = ({ className = '', size = 'md', isPremi
       <img
         src={isPremium ? "/logo_black_transparent.png" : "/logo_white_transparent.png"}
         alt="Logo"
+        width={432}
+        height={462}
         className={`${logoHeight} w-auto object-contain drop-shadow-md`}
       />
     </div>

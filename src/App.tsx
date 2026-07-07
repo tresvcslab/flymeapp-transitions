@@ -220,6 +220,7 @@ export default function App() {
             isAnimatingCar={false}
             hotelAnimState="waiting"
             isDarkMode={isDark}
+            showLogo={showLogo}
           />
         );
       case 'hotels':
@@ -230,6 +231,7 @@ export default function App() {
             isAnimatingCar={false}
             hotelAnimState={hotelAnimState}
             isDarkMode={isDark}
+            showLogo={showLogo}
           />
         );
       case 'cars':
@@ -240,6 +242,7 @@ export default function App() {
             isAnimatingCar={true}
             hotelAnimState="greeting"
             isDarkMode={isDark}
+            showLogo={showLogo}
           />
         );
       case 'trips':

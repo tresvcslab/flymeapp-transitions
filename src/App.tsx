@@ -21,7 +21,7 @@ export default function App() {
 
   const [scene, setScene] = useState<SceneType>(sceneParam);
   const [appMode, setAppMode] = useState<'light' | 'dark' | 'premium'>(
-    themeParam === 'light' ? 'light' : 'dark'
+    themeParam === 'light' ? 'light' : themeParam === 'premium' ? 'premium' : 'dark'
   );
   const theme = appMode === 'light' ? 'light' : 'dark';
   const isPremium = appMode === 'premium';
@@ -69,7 +69,7 @@ export default function App() {
     const handleUrlChange = () => {
       const { sceneParam, themeParam, isTransparentParam, isEmbedParam } = getQueryParams();
       setScene(sceneParam);
-      setAppMode(themeParam === 'light' ? 'light' : 'dark');
+      setAppMode(themeParam === 'light' ? 'light' : themeParam === 'premium' ? 'premium' : 'dark');
       setIsTransparent(isTransparentParam);
       setIsEmbed(isEmbedParam);
     };
@@ -100,7 +100,7 @@ export default function App() {
             }
           }
           if (msgBuffer.theme) {
-            const validThemes: ThemeType[] = ['light', 'dark'];
+            const validThemes: ThemeType[] = ['light', 'dark', 'premium'];
             if (validThemes.includes(msgBuffer.theme)) {
               setAppMode(msgBuffer.theme);
             }

@@ -13,6 +13,7 @@ interface PremiumTransitionsProps {
   isAnimatingTrips?: boolean;
   hotelAnimState: 'waiting' | 'greeting' | 'running';
   isDarkMode: boolean;
+  showLogo?: boolean;
 }
 
 export const PremiumTransitions: React.FC<PremiumTransitionsProps> = ({
@@ -22,6 +23,7 @@ export const PremiumTransitions: React.FC<PremiumTransitionsProps> = ({
   isAnimatingTrips = false,
   hotelAnimState,
   isDarkMode,
+  showLogo = true,
 }) => {
   // Premium Light Theme uses a beautiful pure white background (#FFFFFF)
   const premiumBg = 'bg-[#FFFFFF]';
@@ -40,7 +42,7 @@ export const PremiumTransitions: React.FC<PremiumTransitionsProps> = ({
         className={`fixed inset-0 z-[100] flex flex-col overflow-hidden transition-colors duration-500 ${premiumBg}`}
       >
         {/* Logo in the same position as App.tsx */}
-        <Logo className="absolute top-16 left-1/2 -translate-x-1/2 z-30 text-black" size="md" isPremium={true} />
+        {showLogo && <Logo className="absolute top-16 left-1/2 -translate-x-1/2 z-30 text-black" size="md" isPremium={true} />}
 
         <div className="flex-1 relative flex items-center justify-center">
 
@@ -403,7 +405,7 @@ export const PremiumTransitions: React.FC<PremiumTransitionsProps> = ({
         exit={{ opacity: 0 }}
         className={`fixed inset-0 z-[100] flex flex-col overflow-hidden transition-colors duration-500 ${premiumBg}`}
       >
-        <Logo className="absolute top-16 left-1/2 -translate-x-1/2 z-30 text-black" size="md" isPremium={true} />
+        {showLogo && <Logo className="absolute top-16 left-1/2 -translate-x-1/2 z-30 text-black" size="md" isPremium={true} />}
 
         <div className="flex-1 relative flex items-center justify-center">
 
@@ -1075,7 +1077,7 @@ export const PremiumTransitions: React.FC<PremiumTransitionsProps> = ({
         exit={{ opacity: 0 }}
         className={`fixed inset-0 z-[100] flex flex-col overflow-hidden transition-colors duration-500 ${premiumBg}`}
       >
-        <Logo className="absolute top-16 left-1/2 -translate-x-1/2 z-30 text-black" size="md" isPremium={true} />
+        {showLogo && <Logo className="absolute top-16 left-1/2 -translate-x-1/2 z-30 text-black" size="md" isPremium={true} />}
 
         <div className="flex-1 relative flex items-center justify-center">
 
@@ -1370,9 +1372,11 @@ export const PremiumTransitions: React.FC<PremiumTransitionsProps> = ({
             </div>
             
             {/* Logo in the sky */}
-            <div className="absolute top-16 left-1/2 -translate-x-1/2 text-black z-30">
-               <Logo size="md" isPremium={true} />
-            </div>
+            {showLogo && (
+              <div className="absolute top-16 left-1/2 -translate-x-1/2 text-black z-30">
+                 <Logo size="md" isPremium={true} />
+              </div>
+            )}
 
         </div>
       </motion.div>

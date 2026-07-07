@@ -4,9 +4,10 @@ import { Logo } from './Logo';
 
 interface SplashScreenProps {
   onAnimationComplete: () => void;
+  showLogo?: boolean;
 }
 
-export default function SplashScreen({ onAnimationComplete }: SplashScreenProps) {
+export default function SplashScreen({ onAnimationComplete, showLogo = true }: SplashScreenProps) {
   // Check for PWA standalone mode
   useEffect(() => {
     const isStandalone =
@@ -54,7 +55,8 @@ export default function SplashScreen({ onAnimationComplete }: SplashScreenProps)
         }}
         onAnimationComplete={onAnimationComplete}
       >
-        <Logo size="lg" className="text-white" />
+        {/* Se mantiene el motion.div aunque el logo esté oculto: su onAnimationComplete avisa a Flutter */}
+        {showLogo && <Logo size="lg" className="text-white" />}
       </motion.div>
     </motion.div>
   );

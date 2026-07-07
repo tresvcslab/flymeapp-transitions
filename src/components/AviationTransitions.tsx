@@ -11,6 +11,7 @@ interface AviationTransitionsProps {
   isAnimatingCar: boolean;
   hotelAnimState: 'waiting' | 'greeting' | 'running';
   isDarkMode: boolean;
+  showLogo?: boolean;
 }
 
 export const AviationTransitions: React.FC<AviationTransitionsProps> = ({
@@ -19,6 +20,7 @@ export const AviationTransitions: React.FC<AviationTransitionsProps> = ({
   isAnimatingCar,
   hotelAnimState,
   isDarkMode,
+  showLogo = true,
 }) => {
   if (isAnimatingFlight) {
     return (
@@ -31,7 +33,7 @@ export const AviationTransitions: React.FC<AviationTransitionsProps> = ({
         }`}
       >
         {/* Logo in the same position as App.tsx */}
-        <Logo className="absolute top-16 left-1/2 -translate-x-1/2 z-30" size="md" />
+        {showLogo && <Logo className="absolute top-16 left-1/2 -translate-x-1/2 z-30" size="md" />}
 
         <div className="flex-1 relative flex items-center justify-center">
           {/* Celestial background stardust */}
@@ -404,7 +406,7 @@ export const AviationTransitions: React.FC<AviationTransitionsProps> = ({
           isDarkMode ? 'bg-[#070b13]' : 'bg-[#8B5CF6]'
         }`}
       >
-        <Logo className="absolute top-16 left-1/2 -translate-x-1/2 z-30" size="md" />
+        {showLogo && <Logo className="absolute top-16 left-1/2 -translate-x-1/2 z-30" size="md" />}
 
         <div className="flex-1 relative flex items-center justify-center">
           {/* Floating Clouds */}
@@ -1110,7 +1112,7 @@ export const AviationTransitions: React.FC<AviationTransitionsProps> = ({
           isDarkMode ? 'bg-[#070b13]' : 'bg-[#8B5CF6]'
         }`}
       >
-        <Logo className="absolute top-16 left-1/2 -translate-x-1/2 z-30" size="md" />
+        {showLogo && <Logo className="absolute top-16 left-1/2 -translate-x-1/2 z-30" size="md" />}
 
         <div className="flex-1 relative flex items-center justify-center">
           {/* Running Wind Trails */}

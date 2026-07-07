@@ -1017,7 +1017,15 @@ export const AviationTransitions: React.FC<AviationTransitionsProps> = ({
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <RunningPerson size={100} state="greeting" />
+              {/* Man - Premium blue/navy active clothing */}
+              <RunningPerson 
+                size={100} 
+                state="greeting" 
+                color="#F3B490" 
+                shirtColor="#3B82F6" 
+                pantsColor="#1D4ED8" 
+                capColor="#1E3A8A" 
+              />
             </motion.div>
 
             <motion.div
@@ -1025,7 +1033,15 @@ export const AviationTransitions: React.FC<AviationTransitionsProps> = ({
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              <RunningPerson size={62} state="greeting" />
+              {/* Boy - Playful light blue active clothing */}
+              <RunningPerson 
+                size={62} 
+                state="greeting" 
+                color="#F3B490" 
+                shirtColor="#60A5FA" 
+                pantsColor="#3B82F6" 
+                capColor="#2563EB" 
+              />
             </motion.div>
 
             <motion.div
@@ -1033,7 +1049,15 @@ export const AviationTransitions: React.FC<AviationTransitionsProps> = ({
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
             >
-              <WaitingWoman size={62} state="greeting" />
+              {/* Girl - Sweet pastel pink and rose skirt */}
+              <WaitingWoman 
+                size={62} 
+                state="greeting" 
+                color="#F3B490" 
+                shirtColor="#FBCFE8" 
+                skirtColor="#F472B6" 
+                capColor="#EC4899" 
+              />
             </motion.div>
 
             <motion.div
@@ -1042,7 +1066,15 @@ export const AviationTransitions: React.FC<AviationTransitionsProps> = ({
               transition={{ duration: 0.8, delay: 0.3 }}
               className="ml-2 sm:ml-6"
             >
-              <WaitingWoman size={100} state="greeting" />
+              {/* Woman - Elegant rose and crimson dress outfit */}
+              <WaitingWoman 
+                size={100} 
+                state="greeting" 
+                color="#F3B490" 
+                shirtColor="#F472B6" 
+                skirtColor="#E11D48" 
+                capColor="#BE185D" 
+              />
             </motion.div>
           </div>
           

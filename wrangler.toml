@@ -1,0 +1,17 @@
+# Worker que sirve las animaciones (anims.flymecash.com) como assets estáticos.
+# Deploy manual: npm run build && npx wrangler deploy
+# Deploy automático: .github/workflows/deploy.yml en cada push a main.
+#
+# La ruta anims.flymecash.com/* intercepta el dominio por delante del registro
+# DNS existente (el antiguo proxy a AI Studio queda sin efecto sin tocar DNS).
+
+name = "flymecash-anims"
+compatibility_date = "2026-07-07"
+
+routes = [
+  { pattern = "anims.flymecash.com/*", zone_name = "flymecash.com" }
+]
+
+[assets]
+directory = "./dist"
+not_found_handling = "single-page-application"

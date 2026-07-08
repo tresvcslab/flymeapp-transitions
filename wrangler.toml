@@ -1,0 +1,19 @@
+# Configuracion del Worker que sirve las animaciones (anims.flymecash.com).
+# La necesita el pipeline de Cloudflare Workers Builds: su "Deploy command"
+# es `npx wrangler deploy`, que lee este archivo para saber que Worker crear
+# y que carpeta servir como assets estaticos. Sin este archivo, el deploy falla.
+#
+# Deploy automatico: cada push a `main` (rama de produccion en Workers Builds).
+
+name = "flymecash-anims-v2"
+compatibility_date = "2026-07-07"
+
+# La ruta del dominio custom. Coexiste con el Custom Domain de la pestana Domains
+# (config probada: este mismo bloque desplego verde en el commit 631be87).
+routes = [
+  { pattern = "anims.flymecash.com/*", zone_name = "flymecash.com" }
+]
+
+[assets]
+directory = "./dist"
+not_found_handling = "single-page-application"
